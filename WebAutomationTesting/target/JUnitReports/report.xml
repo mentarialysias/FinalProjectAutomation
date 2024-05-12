@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="21.881" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Login to Swag Labs" name="verifikasi halaman login" time="20.881">
+<system-out><![CDATA[
+When User has opened swag labs browser......................................passed
+Then There are fields for inputting username and password that have not been filled in.passed
+And There is a green Login Button...........................................passed
+And There is a Swag Labs logo name..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
