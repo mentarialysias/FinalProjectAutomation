@@ -60,7 +60,7 @@ public class LoginSteps {
 	@Then("User should be able to see a error message {string}")
 	public void user_should_be_able_to_see_a_error_message(String errorMessage) {
 		System.out.println(objLogin.getErrorMessage());
-		Assert.assertEquals(objLogin.getErrorMessage(), errorMessage);
+		Assert.assertEquals(errorMessage, objLogin.getErrorMessage());
 	}
 
 

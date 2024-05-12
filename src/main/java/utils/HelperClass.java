@@ -14,7 +14,7 @@ public class HelperClass {
 
     private HelperClass() {
         // Mengatur path lokal dari driver Chrome
-        System.setProperty("webdriver.chrome.driver", "D:\\POLBAN\\Semester 6\\2. PPL\\Praktikum\\12\\webAutomationProject\\src\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", ".\\src\\driver\\chromedriver.exe");
 
         // Mengatur opsi Chrome (misalnya, start-maximized, remote-allow-origins)
         ChromeOptions options = new ChromeOptions();
