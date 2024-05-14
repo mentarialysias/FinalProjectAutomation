@@ -15,29 +15,36 @@ Feature: Login to Swag Labs
     When User enters username as "standard_user" and password as "secret_sauce"
     Then User should be able to login successfully and new page open
 
-  @InvalidCredentials @TC03
-  Scenario Outline: Login with invalid credentials
-    When User enters username as "<username>" and password as "<password>"
-    Then User should be able to see a error message "<errorMessage>"
+  @RegisteredUsernameWithUnregisteredPassword @TC03
+  Scenario: Login with registered username but the password is unregistred
+    When User enters username as "standard_user" and password as "pasworduser1"
+    Then User should be able to see a error message "Error Password doesn't match"
 
-    Examples:
-      | username      | password     | errorMessage                 | test case      |
-      | standard_user | pasworduser1 | Error Password doesn't match | wrong password |
-
-
-  @MissingPassword @TC04
-  Scenario: Login with blank password
+  @RegisteredUsernameWithMissingPassword @TC04
+  Scenario: Login with registered username but the password is blank
     When User enters username as "standard_user" and password as ""
     Then User should be able to see a error message "Error Mandatory Checking When Password Not Filled"
 
-  @MissingUsername @TC06
-  Scenario: Login with blank username
+  @UnregisteredUsernameWithRegisteredPassword @TC05
+  Scenario: Login with unregistered username and password is registered
+    When User enters username as "standard_user123" and password as "secret_sauce"
+    Then User should be able to see a error message "Error Username doesn't match"
+
+  @BlankUsernameWithRegisteredPassword @TC06
+  Scenario: Login with blank username and password is registered
     When User enters username as "" and password as "secret_sauce"
     Then User should be able to see a error message "Error Mandatory Checking When Username Not Filled"
+
+  @UnregisteredUsernameAndPassword @TC07
+  Scenario: Login with unregistered username and password
+    When User enters username as "standard_user123" and password as "secret_sauce123"
+    Then User should be able to see a error message "Error Username doesn't match"
 
   @MissingUsernamePassword @TC10
   Scenario: Login with blank username and password
     When User enters username as "" and password as ""
     Then User should be able to see a error message "Error Mandatory Checking When Username & Password Not Filled"
+
+
 
 
