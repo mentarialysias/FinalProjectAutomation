@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(tags = "", 
-                 features = "src/test/resources/LoginPage.feature", 
+                 features = "src/test/resources/",
                  glue = {"stepdefinitions"},
                  monochrome = true,
                  plugin = {"html:target/HtmlReports/report.html",

@@ -49,12 +49,10 @@ public class LoginSteps {
 		objLogin.loginStep(username, password);
 	}
 
-	@Then("User should be able to login successfully and new page open")
-	public void user_should_be_able_to_login_successfully_and_new_page_open() {
+	@Then("User should be able to login successfully and navigated to dashboard page")
+	public void user_should_be_able_to_login_successfully_and_navigated_to_dashboard_page() {
+		// valid login and navigated to dashboard page
 		Assert.assertTrue(objHomePage.getDashboard().isDisplayed());
-		objHomePage.getProfileButton().click();
-		objHomePage.getLogoutButton().click();
-
 	}
 
 	@Then("User should be able to see a error message {string}")

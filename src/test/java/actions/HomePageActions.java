@@ -23,8 +23,8 @@ public class HomePageActions {
         return(homePageLocators.Dashboard);
     }
 
-    public WebElement getProfileButton() {
-        return(homePageLocators.profileButton);
+    public WebElement getSideBarButton() {
+        return(homePageLocators.sideBarButton);
     }
 
     public WebElement getLogoutButton() {

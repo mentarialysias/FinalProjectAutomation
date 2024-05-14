@@ -14,7 +14,7 @@ public class HomePageLocators {
     public WebElement Dashboard;
 
     @FindBy(xpath = "//*[@id=\"react-burger-menu-btn\"]")
-    public WebElement profileButton;
+    public WebElement sideBarButton;
 
     @FindBy(xpath = "//*[@id=\"logout_sidebar_link\"]")
     public WebElement logoutButton;

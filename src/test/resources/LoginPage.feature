@@ -13,7 +13,7 @@ Feature: Login to Swag Labs
   @ValidCredentials @TC02
   Scenario: Login with valid credentials
     When User enters username as "standard_user" and password as "secret_sauce"
-    Then User should be able to login successfully and new page open
+    Then User should be able to login successfully and navigated to dashboard page
 
   @RegisteredUsernameWithUnregisteredPassword @TC03
   Scenario: Login with registered username but the password is unregistred
@@ -44,7 +44,5 @@ Feature: Login to Swag Labs
   Scenario: Login with blank username and password
     When User enters username as "" and password as ""
     Then User should be able to see a error message "Error Mandatory Checking When Username & Password Not Filled"
-
-
 
 
