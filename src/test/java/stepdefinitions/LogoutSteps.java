@@ -9,7 +9,7 @@ import org.junit.Assert;
 import utils.HelperClass;
 
 public class LogoutSteps {
-	
+
 	LoginPageActions objLogin = new LoginPageActions();
 	HomePageActions objHomePage = new HomePageActions();
 

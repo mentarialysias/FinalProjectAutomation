@@ -40,6 +40,16 @@ Feature: Login to Swag Labs
     When User enters username as "standard_user123" and password as "secret_sauce123"
     Then User should be able to see a error message "Error Username doesn't match"
 
+  @UnregisteredUsernameAndBlankPassword @TC08
+  Scenario: Login with unregistered username and blank password
+    When User enters username as "standard_user123" and password as " "
+    Then User should be able to see a error message "Epic sadface: Password is required"
+
+  @BlankUsernameAndUnregisteredPassword @TC09
+  Scenario: Login with unregistered username and blank password
+    When User enters username as " " and password as "asdfasdg"
+    Then User should be able to see a error message "Epic sadface: Username is required"
+
   @MissingUsernamePassword @TC10
   Scenario: Login with blank username and password
     When User enters username as "" and password as ""

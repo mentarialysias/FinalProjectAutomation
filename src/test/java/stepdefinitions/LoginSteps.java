@@ -26,7 +26,6 @@ public class LoginSteps {
 		Thread.sleep(2000);
 	}
 
-
 	@Then("There are fields for inputting username and password")
 	public void there_are_fields_for_inputting_username_and_password() {
 		Assert.assertTrue(objLogin.isPasswordFieldDisplayed());
