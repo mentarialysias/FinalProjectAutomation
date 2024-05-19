@@ -34,87 +34,70 @@ Proyek ini terdiri dari 5 bagian utama:
     java -version
     ``` 
 
-3. Pastikan sudah terinstal Gradle. Anda dapat mengunduh dan menginstal Gradle dari situs resminya: [Gradle Installation Guide](https://gradle.org/install/).
+3. Pastikan Anda telah menginstal Apache Maven. Maven adalah alat manajemen proyek yang digunakan untuk mengelola dependensi dan membangun proyek Java. Anda dapat mengunduh dan menginstal Maven dari situs resminya: [Apache Maven Download](https://maven.apache.org/download.cgi). 
+ Untuk memeriksa apakah Maven sudah terinstal, jalankan perintah berikut di terminal:
+     ```
+    mvn -v
+    ```
 
-   Untuk memeriksa apakah Gradle sudah terinstal, jalankan perintah berikut di terminal:
-    ```
-    gradle -v
-    ```
+4. Pastikan Anda telah menginstal plugin `Cucumber for Java` dan `Gherkins` untuk mendukung pengujian otomatis. Bila Anda menggunakan IntelliJ, Anda bisa menginstalnya dari plugin dengan menggunakan shortcut `ctrl + alt + s`, lalu instal plugin yang diperlukan. Jangan lupa untuk merestart IDE setelah plugin berhasil ditambahkan.
+   <br> <img src="src/image/plugins.png">
 
-4. (Opsional) Proyek ini menggunakan TestNG untuk melakukan pengujian otomatis, Anda dapat menginstalnya dengan cara:
-    - Untuk pengguna Eclipse, Anda bisa mendownload dan menginstal TestNG dari Eclipse Marketplace.
-    - IntelliJ IDEA biasanya sudah menyertakan dukungan untuk TestNG tanpa instalasi tambahan
 
-6. Pastikan telah mengonfigurasi RestAssured. Tambahkan dependensi RestAssured ke dalam file build.gradle:
-   gradle :
-    ```
-    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
-    }
-    ```
+
+
 ## Cara Menjalankan
 
 1. Buka proyek dengan IDE favorit Anda. Disarankan untuk menggunakan IntelliJ IDEA untuk kenyamanan pengembangan.
 
 2. Lakukan build proyek untuk menyiapkan aplikasi dengan perintah build di IDE Anda atau dengan perintah:
     ```
-    npm run build
+    mvn clean install
     ```
 
-3. Generate file-file Gradle yang diperlukan dengan perintah:
+3. Jalankan program untuk melakukan pengujian otomatis dengan perintah:
     ```
-    npm run wrapper
+    mvn test
     ```
-
-4. Jalankan program untuk melakukan pengujian manual dengan perintah:
-    ```
-    npm start
-    ```
-   Ini akan menjalankan program dalam mode pengembangan atau sesuai dengan skrip start yang telah dikonfigurasi.
-
-5. Lakukan pengujian otomatis dengan perintah:
-    ```
-    npm test
-    ```
-   Ini akan menjalankan skrip pengujian otomatis yang telah disiapkan untuk proyek.
+   Ini akan menjalankan program secara otomatis dan mengeksekusi skenario berdasarkan isi file test runner yaitu `CucumberRunnerTest.java`
 
 ## Struktur Folder Project Setelah Program Dijalankan
 Berikut struktur folder project setelah program dijalankan hingga step npm test:
 ```
-├── .gradle
-├── build
+├── src
 │   ├── ...
-│   ├── reports
-|   |   └── tests
-|   │   |    ├── ...
-|   │   |    ├── index.html
-|   |   │    └── testng-results.xml
-|   └── ...
-├── gradle
-└── src
-    ├── main
-    │   └── java
-    │       └── org
-    │           └── Main.java
-    └── test
-        ├── java
-        │   ├── CreateTest.java
-        │   ├── DeleteTest.java
-        │   ├── GetTest.java
-        │   ├── TestHelper.java
-        │   ├── UpdateTest.java
-        └── resources
-            └── testng.xml
+│   └── test
+|       ├── java
+|       |    ├── actions
+|       │    │    ├── HomePageActions.java
+|       │    │    └── LoginPageActions.java
+|       │    ├── locators
+|       │    │    ├── HomePageLocators.java
+|       │    │    └── LoginPageLocators.java
+|       │    ├── runner
+|       │    │    └── cucumberRunnerTest.java
+|       │    ├── stepdefinitions
+|       │    │    ├── Hooks.java
+|       │    │    ├── LoginSteps.java
+|       │    │    └── LogoutSteps.java
+|       │    └── utils
+|       │         └── HelperClass.java
+|       └── resource
+|           ├── LoginPage.feature 
+|           └── LogoutPage.feature
+├── pom.xml
+└── README.md
+    
 ```
 
-## Pengujian dan Generate Report dengan TestNG
-Pengujian dilakukan menggunakan TestNG dan RestAssured untuk memastikan fungsi-fungsi API bekerja sesuai yang diharapkan.Laporan hasil pengujian akan digenerate secara otomatis. Laporan ini terletak pada file berikut: `build/reports/tests/index.html`. Hasil pengujiannya sebagai berikut:
-
-- Total test: <span style="color:#2196F3; font-weight:bold;">21</span>
-- Successful: <span style="color:#4CAF50; font-weight:bold;">15 (71%)</span>
-- Failures: <span style="color:#F44336; font-weight:bold;">6 (29%)</span>
+## Pengujian dan Generate Report
+Pengujian dilakukan menggunakan JUnit. Laporan hasil pengujian akan digenerate secara otomatis. Laporan ini terletak pada folder `target` setelah pengujian otomatis dijalankan. Hasil pengujiannya sebagai berikut:
+- Total test: <span style="color:#2196F3; font-weight:bold;">11</span>
+- Successful: <span style="color:#4CAF50; font-weight:bold;">3 (27%)</span>
+- Failures: <span style="color:#F44336; font-weight:bold;">8 (73%)</span>
 - Igroned: <span style="color:#FFC107; font-weight:bold;">0</span>
 
-<img src="src/test/img.png" width="500">
+<br> <img src="src/image/report.png">
 
 ## Pengembang
 [<img src="https://github.com/delvitord.png" width="50" style="border-radius:50%">](https://github.com/delvitord)
@@ -126,22 +109,22 @@ Pengujian dilakukan menggunakan TestNG dan RestAssured untuk memastikan fungsi-f
 <br> Mentari Ayu Alysia Sudrajat - 211524047 ([@mentarialysias](https://github.com/mentarialysias))
 <br> Yasmin Azizah Tuhfah - 211524064 ([@yasminazizahtuhfah](https://github.com/yasminazizahtuhfah))
 <b>
-## Alat
-- ![](https://img.shields.io/badge/Gradle-Versi_7.4-%2383afd7)
-  <br>Digunakan sebagai alat pembangunan untuk mengelola proyek Java dengan efisien. Kunjungi [situs web Gradle](https://gradle.org/) untuk informasi lebih lanjut.
+# Alat dan Teknologi yang Digunakan
 
+1. ![Maven](https://img.shields.io/badge/Maven-Versi_3.9.6-%2374CBEB)
+   <br>Maven digunakan sebagai alat manajemen proyek untuk mengelola dependensi dan membangun proyek Java. Kunjungi [situs web Maven](https://maven.apache.org/) untuk informasi lebih lanjut.
 
-- ![](https://img.shields.io/badge/Java-Versi_16-%23ffcc80)
-  <br>Versi 16 atau yang lebih baru</span>. Bahasa pemrograman Java digunakan dalam proyek ini. Pastikan untuk menginstal versi Java yang sesuai. Kunjungi [situs web Java](https://www.java.com/) untuk informasi lebih lanjut.
+2. ![](https://img.shields.io/badge/JUnit-Framework_Pengujian-%23FFE57E)
+   <br>JUnit adalah framework pengujian unit untuk bahasa pemrograman Java. Kunjungi [situs web JUnit](https://junit.org/junit5/) untuk informasi lebih lanjut.
 
+3. ![Cucumber for Java](https://img.shields.io/badge/Cucumber_for_Java-Framework_Pengujian-%23efcfe3)
+   <br>Cucumber for Java adalah framework pengujian otomatis yang menggunakan bahasa Gherkin untuk menulis skenario pengujian. Kunjungi [situs web Cucumber](https://cucumber.io/docs/guides/10-minute-tutorial/) untuk informasi lebih lanjut.
 
-- ![](https://img.shields.io/badge/TestNG-Framework_Pengujian-%23a5d6a7)
-  <br>Framework pengujian</span> yang digunakan untuk menulis dan menjalankan unit tes dalam proyek Java. Kunjungi [situs web TestNG](https://testng.org/) untuk informasi lebih lanjut.
+4. ![Gherkin](https://img.shields.io/badge/Gherkin-Bahasa_Pengujian-%2393D3D5)
+      <br>Gherkin adalah bahasa alami yang digunakan untuk menulis skenario pengujian dalam kerangka kerja pengujian perilaku seperti Cucumber. Kunjungi [dokumentasi Cucumber](https://cucumber.io/docs/gherkin/) untuk informasi lebih lanjut.
 
+4. ![Selenium](https://img.shields.io/badge/Selenium-Framework_Pengujian-%23FF69B4)
+   <br>Selenium adalah library untuk otomatisasi pengujian web. Kunjungi [situs web Selenium](https://www.selenium.dev/documentation/en/) untuk informasi lebih lanjut.
 
-- ![](https://img.shields.io/badge/Node.js-Platform_runtime_JavaScript-%23b39ddb)
-  <br>Platform runtime JavaScript</span> yang digunakan untuk menjalankan aplikasi JavaScript di sisi server. Pastikan Node.js telah diinstal untuk menjalankan aplikasi. Kunjungi [situs web Node.js](https://nodejs.org/) untuk informasi lebih lanjut.
-
-
-- ![](https://img.shields.io/badge/RestAssured-API_Testing_Library-%2300E676)
-  <br>RestAssured adalah library Java yang kuat untuk melakukan pengujian API secara otomatis. Dengan RestAssured, Anda dapat dengan mudah melakukan permintaan HTTP ke endpoint API, memeriksa respons, dan memvalidasi data JSON. Kunjungi dokumentasi RestAssured untuk informasi lebih lanjut.
+5. ![EdgeDriver](https://img.shields.io/badge/EdgeDriver-WebDriver-%2374CB)
+   <br>EdgeDriver adalah driver untuk mengotomatisasi pengujian di browser Microsoft Edge. Kunjungi [situs web Selenium](https://www.selenium.dev/documentation/en/) untuk informasi lebih lanjut.
