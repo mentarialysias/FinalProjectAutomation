@@ -5,9 +5,9 @@
 - [Prasyarat](#prasyarat)
 - [Cara Menjalankan](#cara-menjalankan)
 - [Struktur Folder Project Setelah Program Dijalankan](#struktur-folder-project-setelah-program-dijalankan)
-- [Pengujian dan Generate Report dengan TestNG](#pengujian-dan-generate-report-dengan-testng)
+- [Pengujian dan Generate Report](#pengujian-dan-generate-report)
 - [Pengembang](#pengembang)
-- [Alat](#alat)
+- [Alat dan Teknologi yang Digunakan](#alat-dan-teknologi-yang-digunakan)
 
 ## Deskripsi
 Proyek ini adalah aplikasi pengujian otomatis untuk Web Swag Labs (https://www.saucedemo.com/) menggunakan Java, Maven, Cucumber, Selenium, dan JUnit. Pengujian dilakukan untuk memastikan setiap fitur berjalan sesuai dengan spesifikasi requirement dan desainnya.
