@@ -21,7 +21,6 @@ public class LoginPageActions {
     boolean isDisplayed = usernameField.isDisplayed();
     boolean isEmpty = usernameField.getText().isEmpty();
     String placeholderText = usernameField.getAttribute("placeholder");
-
     return isDisplayed && isEmpty && placeholderText.equals("Username");
   }
 
@@ -30,7 +29,6 @@ public class LoginPageActions {
     boolean isDisplayed = passwordField.isDisplayed();
     boolean isEmpty = passwordField.getText().isEmpty();
     String placeholderText = passwordField.getAttribute("placeholder");
-
     return isDisplayed && isEmpty && placeholderText.equals("Password");
   }
   public boolean isLogoDisplayed(){
@@ -42,9 +40,7 @@ public class LoginPageActions {
     boolean isButtonEnabled = loginButton.isEnabled();
     String buttonColor = loginButton.getCssValue("background-color");
     System.out.print(buttonColor);
-
     boolean hasColor = buttonColor.equalsIgnoreCase("rgba(61, 220, 145, 1)") || buttonColor.equalsIgnoreCase("#3ddc91");
-
     return isButtonEnabled && hasColor;
 }
   public void loginStep(String username, String password) {
