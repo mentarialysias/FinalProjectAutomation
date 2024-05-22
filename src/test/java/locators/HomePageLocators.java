@@ -19,4 +19,19 @@ public class HomePageLocators {
     @FindBy(xpath = "//*[@id=\"logout_sidebar_link\"]")
     public WebElement logoutButton;
 
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    public WebElement addItemButton;
+
+    @FindBy(className = "shopping_cart_link")
+    public WebElement cartButton;
+
+    @FindBy(className = "inventory_item_name")
+    public WebElement itemName;
+
+    @FindBy(className = "inventory_item_price")
+    public WebElement itemPrice;
+
+    @FindBy(className = "inventory_item_desc")
+    public WebElement itemDesc;
+
 }
