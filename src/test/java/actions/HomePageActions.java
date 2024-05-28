@@ -37,5 +37,17 @@ public class HomePageActions {
         return(homePageLocators.homePageTitle.getText());
     }
 
+    public boolean isCartButtonEnable() {
+        WebElement cartButton = homePageLocators.cartButton;
+        boolean isCartButtonEnable = cartButton.isEnabled();
+        return isCartButtonEnable;
+    }
 
+    public void addItemToCart() {
+        homePageLocators.addItemButton.click();
+    }
+
+    public void clickOnCartButton() {
+        homePageLocators.cartButton.click();
+    }
 }
