@@ -15,44 +15,19 @@ Feature: Login to Swag Labs
     When User enters username as "standard_user" and password as "secret_sauce"
     Then User should be able to login successfully and navigated to dashboard page
 
-  @RegisteredUsernameWithUnregisteredPassword @TC03
-  Scenario: Login with registered username but the password is unregistred
-    When User enters username as "standard_user" and password as "pasworduser1"
-    Then User should be able to see a error message "Error Password doesn't match"
+  @InvalidCredentials @TC03_to_TC10
+    Scenario Outline: Login with invalid credentials
+      When User enters username as "<username>" and password as "<password>"
+      Then User should be able to see a error message "<error_message>"
 
-  @RegisteredUsernameWithMissingPassword @TC04
-  Scenario: Login with registered username but the password is blank
-    When User enters username as "standard_user" and password as ""
-    Then User should be able to see a error message "Error Mandatory Checking When Password Not Filled"
-
-  @UnregisteredUsernameWithRegisteredPassword @TC05
-  Scenario: Login with unregistered username and password is registered
-    When User enters username as "standard_user123" and password as "secret_sauce"
-    Then User should be able to see a error message "Error Username doesn't match"
-
-  @BlankUsernameWithRegisteredPassword @TC06
-  Scenario: Login with blank username and password is registered
-    When User enters username as "" and password as "secret_sauce"
-    Then User should be able to see a error message "Error Mandatory Checking When Username Not Filled"
-
-  @UnregisteredUsernameAndPassword @TC07
-  Scenario: Login with unregistered username and password
-    When User enters username as "standard_user123" and password as "secret_sauce123"
-    Then User should be able to see a error message "Error Username doesn't match"
-
-  @UnregisteredUsernameAndBlankPassword @TC08
-  Scenario: Login with unregistered username and blank password
-    When User enters username as "standard_user123" and password as " "
-    Then User should be able to see a error message "Epic sadface: Password is required"
-
-  @BlankUsernameAndUnregisteredPassword @TC09
-  Scenario: Login with unregistered username and blank password
-    When User enters username as " " and password as "asdfasdg"
-    Then User should be able to see a error message "Epic sadface: Username is required"
-
-  @MissingUsernamePassword @TC10
-  Scenario: Login with blank username and password
-    When User enters username as "" and password as ""
-    Then User should be able to see a error message "Error Mandatory Checking When Username & Password Not Filled"
-
+      Examples:
+        | test_case | test_case_name                                                 | username         | password        | error_message                                                |
+        | TC03      | Login with registered username but the password is unregistred | standard_user    | secret_sauce123 | Error Password doesn't match                                 |
+        | TC04      | Login with registered username but the password is blank       | standard_user    |                 | Error Mandatory Checking When Password Not Filled            |
+        | TC05      | Login with unregistered username and registered password       | standard_user123 | secret_sauce    | Error Username doesn't match                                 |
+        | TC06      | Login with blank username and registered password              |                  | secret_sauce    | Error Mandatory Checking When Username Not Filled            |
+        | TC07      | Login with unregistered username and password                  | standard_user123 | secret_sauce123 | Error Username doesn't match                                 |
+        | TC08      | Login with unregistered username and blank password            | standard_user123 |                 | Error Mandatory Checking When Password Not Filled            |
+        | TC09      | Login with blank username and unregistered password            |                  | secret_sauce123 | Error Mandatory Checking When Username Not Filled            |
+        | TC10      | Login with blank username and password                         |                  |                 | Error Mandatory Checking When Username & Password Not Filled |
 

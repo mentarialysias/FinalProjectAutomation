@@ -1,8 +1,11 @@
 package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+
 
 import java.time.Duration;
 
@@ -13,16 +16,17 @@ public class HelperClass {
     private static WebDriver driver; // Gunakan atribut kelas ini untuk menyimpan instance WebDriver
 
     private HelperClass() {
-        // Mengatur path lokal dari driver Chrome
-        System.setProperty("webdriver.chrome.driver", ".\\src\\driver\\chromedriver.exe");
 
-        // Mengatur opsi Chrome (misalnya, start-maximized, remote-allow-origins)
-        ChromeOptions options = new ChromeOptions();
+        // Mengatur path lokal dari driver edge
+        WebDriverManager.edgedriver().setup();
+
+        // Mengatur opsi edge (misalnya, start-maximized, remote-allow-origins)
+        EdgeOptions options = new EdgeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--remote-allow-origins=*");
 
         // Menggunakan atribut kelas driver untuk inisialisasi WebDriver
-        driver = new ChromeDriver(options);
+        driver = new EdgeDriver(options);
 
         System.out.println("bebas");
 
