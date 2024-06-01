@@ -2,7 +2,6 @@ package actions;
 
 import locators.CheckoutOvwPageLocators;
 import locators.DashboardPageLocators;
-import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 import utils.HelperClass;
 

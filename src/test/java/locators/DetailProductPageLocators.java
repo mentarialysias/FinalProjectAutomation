@@ -4,6 +4,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class DetailProductPageLocators {
 
+    @FindBy(className = "inventory_details_back_button")
+    public WebElement backButton;
+
     @FindBy(className = "inventory_details_name")
     public WebElement productName;
 
@@ -15,6 +18,11 @@ public class DetailProductPageLocators {
 
     @FindBy(className = "inventory_details_price")
     public WebElement productPrice;
+
+    @FindBy(className = "btn_inventory")
+    public WebElement addNRemoveButton;
+
+
 
 
 

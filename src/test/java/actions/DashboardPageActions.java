@@ -51,4 +51,8 @@ public class DashboardPageActions {
     public void clickOnCartButton() {
         dashboardPageLocators.cartButton.click();
     }
+
+    public void clickProduct(){
+        dashboardPageLocators.detailBackpack.click();
+    }
 }

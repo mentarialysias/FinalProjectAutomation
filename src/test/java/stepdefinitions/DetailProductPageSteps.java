@@ -1,6 +1,8 @@
 package stepdefinitions;
 
+import actions.DetailProductPageActions;
 import io.cucumber.java.en.*;
+import org.bouncycastle.jcajce.provider.asymmetric.edec.IESCipher;
 import org.junit.Assert;
 
 import actions.LoginPageActions;
@@ -9,6 +11,8 @@ import actions.DashboardPageActions;
 
 public class DetailProductPageSteps {
 
+    DashboardPageActions objDashboardPage = new DashboardPageActions();
+    DetailProductPageActions objDetailProductPage = new DetailProductPageActions();
     LoginSteps loginSteps = new LoginSteps();
 
     @Given("User is on Detail Product Page of Sauce Labs Backpack")
@@ -18,34 +22,53 @@ public class DetailProductPageSteps {
         loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
         loginSteps.userNavigateToDashboardPage();
 
-
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        objDashboardPage.clickProduct();
     }
 
     @When("User has on detail product page")
-    public void user_has_on_detail_product_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void navigatedToDetailProductPage() {
+        objDetailProductPage.cekURLDetailProduct();
     }
 
     @Then("There is back to product button")
-    public void there_is_back_to_product_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void backButtonChecked() {
+        objDetailProductPage.isBackButtonDisplayed();
+
     }
 
-    @Then("There are name, picture, description, and price of the product")
-    public void there_are_name_picture_description_and_price_of_the_product() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("there is the name, image, description and price of the Sauce Labs Backpack product")
+    public void detailProductChecked() {
+       objDetailProductPage.isProductNameDisplayed();
+       objDetailProductPage.isProductImageDisplayed();
+       objDetailProductPage.isProductDescriptionDisplayed();
+       objDetailProductPage.isProductPriceDisplayed();
     }
 
     @Then("There is Add to cart button")
-    public void there_is_add_to_cart_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void AddCartButtonChecked() {
+        objDetailProductPage.isAddCartButtonDisplayed();
     }
+
+    @When("User click Add to cart button")
+    public void clickAddCartButton() {
+        objDetailProductPage.clickAddToCart();
+    }
+
+    @Then("Add to cart button change to Remove button")
+    public void checkingButton() {
+       objDetailProductPage.removeButtonDisplayed();
+    }
+
+    @When("User click Back to product button")
+    public void clickBackButton() {
+        objDetailProductPage.clickBackButton();
+    }
+
+    @Then("User navigate to dashboard page")
+    public void navigateToDashboard() {
+        objDetailProductPage.cekURLDashboard();
+    }
+
 
 
 

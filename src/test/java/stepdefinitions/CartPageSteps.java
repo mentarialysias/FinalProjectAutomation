@@ -11,7 +11,7 @@ import org.junit.Assert;
 public class CartPageSteps {
 
     LoginPageActions objLogin = new LoginPageActions();
-    DashboardPageActions objHomePage = new DashboardPageActions();
+    DashboardPageActions objDashboardPage = new DashboardPageActions();
     CartPageActions objCartPage = new CartPageActions();
     LoginSteps loginSteps = new LoginSteps();
     CheckoutSteps checkoutSteps = new CheckoutSteps();
@@ -25,7 +25,7 @@ public class CartPageSteps {
 
     @Given("User has add item to cart")
     public void user_has_add_item_to_cart() {
-        objHomePage.addItemToCart();
+        objDashboardPage.addItemToCart();
     }
 
 //    @Then("User should be able to see a error message {string}")
@@ -35,7 +35,7 @@ public class CartPageSteps {
 //    }
     @When("User click on cart button")
     public void user_click_on_cart_button() {
-        objHomePage.clickOnCartButton();
+        objDashboardPage.clickOnCartButton();
     }
 
     @Then("User has navigated to cart page")

@@ -7,7 +7,7 @@ Feature: Check Detail Product Page
   Scenario: Detail Product Page Varification
     When User has on detail product page
     Then There is back to product button
-    And There are name, picture, description, and price of the product
+    And there is the name, image, description and price of the Sauce Labs Backpack product
     And There is Add to cart button
 
 
