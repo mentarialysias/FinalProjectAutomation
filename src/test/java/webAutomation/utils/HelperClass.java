@@ -28,13 +28,12 @@ public class HelperClass {
         // Menggunakan atribut kelas driver untuk inisialisasi WebDriver
         driver = new EdgeDriver(options);
 
-        System.out.println("bebas");
 
         // Melakukan beberapa pengaturan pada driver seperti maximize window,
         // menghapus semua cookies, dan menetapkan waktu tunggu implisit
         driver.manage().window().maximize(); // Maksimalkan jendela
         driver.manage().deleteAllCookies(); // Hapus semua cookies
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT)); // Atur waktu tunggu implisit
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Atur waktu tunggu implisit
     }
 
     // Metode untuk mendapatkan instance WebDriver

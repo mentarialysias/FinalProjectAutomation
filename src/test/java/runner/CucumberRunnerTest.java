@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = "",
+@CucumberOptions(tags = "@ResetAppState",
                  features = "src/test/resources/",
                  glue = {"stepdefinitions"},
                  monochrome = true,

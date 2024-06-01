@@ -8,12 +8,13 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import webAutomation.utils.HelperClass;
 
-public class LogoutSteps {
+public class MenuPageSteps {
 
 	LoginPageActions objLogin = new LoginPageActions();
 	DashboardPageActions objDashboardPage = new DashboardPageActions();
 
 	String loginPageUrl = "https://www.saucedemo.com/";
+	String aboutPageUrl = "https://saucelabs.com/";
 
 
 	@Given("User login successfully and navigated to dashboard page")
@@ -44,7 +45,25 @@ public class LogoutSteps {
 		Thread.sleep(2000);
 	}
 
+	@Then("User clicks on reset app state button")
+	public void user_clicks_on_reset_app_state_button() throws InterruptedException {
+		// Click reset app state button
+		objDashboardPage.resetAppStateButtonClick();
+		Thread.sleep(2000);
+	}
 
+	@When("User clicks on about button")
+	public void user_clicks_on_about_button() throws InterruptedException {
+		objDashboardPage.aboutButtonClick();
+		Thread.sleep(2000);
+	}
+
+	@Then("User should be able to navigate to the about page")
+	public void user_should_be_able_to_navigate_to_the_about_page() throws InterruptedException {
+		String currentUrl = HelperClass.getCurrentUrl();
+		Assert.assertEquals(aboutPageUrl, currentUrl);
+		Thread.sleep(2000);
+	}
 
 
 

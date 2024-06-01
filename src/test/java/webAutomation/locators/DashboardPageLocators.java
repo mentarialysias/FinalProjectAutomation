@@ -23,7 +23,22 @@ public class DashboardPageLocators {
     public WebElement logoutButton;
 
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
-    public WebElement addItemButton;
+    public WebElement addToCartBackpackButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-bike-light")
+    public WebElement addToCartBikeLightButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-bolt-t-shirt")
+    public WebElement addToCartBoltTshirtButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-fleece-jacket")
+    public WebElement addToCartFleeceJacketButton;
+
+    @FindBy(id = "add-to-cart-sauce-labs-onesie")
+    public WebElement addToCartOnesieButton;
+
+    @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
+    public WebElement addToCartRedTshirtButton;
 
     @FindBy(className = "shopping_cart_link")
     public WebElement cartButton;
@@ -56,5 +71,26 @@ public class DashboardPageLocators {
     public List<WebElement> productNames;
 
     @FindBy(id = "remove-sauce-labs-backpack")
-    public WebElement removeItemButton;
+    public WebElement removeBackpackButton;
+
+    @FindBy(id = "remove-sauce-labs-bike-light")
+    public WebElement removeBikeLightButton;
+
+    @FindBy(id = "remove-sauce-labs-bolt-t-shirt")
+    public WebElement removeBoltTshirtButton;
+
+    @FindBy(id = "remove-sauce-labs-fleece-jacket")
+    public WebElement removeFleeceJacketButton;
+
+    @FindBy(id = "remove-sauce-labs-onesie")
+    public WebElement removeOnesieButton;
+
+    @FindBy(id = "remove-test.allthethings()-t-shirt-(red)")
+    public WebElement removeRedTshirtButton;
+
+    @FindBy(id = "reset_sidebar_link")
+    public WebElement resetAppStateButton;
+
+    @FindBy(id = "about_sidebar_link")
+    public WebElement aboutButton;
 }

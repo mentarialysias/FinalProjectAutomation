@@ -22,9 +22,9 @@ public class DashboardPageSteps {
     }
 
     @When("User clicks the Add to cart button in {string} item on the dashboard")
-    public void user_clicks_the_add_to_cart_button_in_item_on_the_dashboard(String string) throws InterruptedException {
+    public void user_clicks_the_add_to_cart_button_in_item_on_the_dashboard(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-        objDashboardPage.addItemToCart();
+        objDashboardPage.addItemToCart(item);
         Thread.sleep(2000);
     }
 
@@ -34,16 +34,16 @@ public class DashboardPageSteps {
         Assert.assertEquals(objDashboardPage.numberItemInCartButton(), numberOfItem);
     }
 
-    @Then("Add to Cart button in product which selected should change to Remove")
-    public void add_to_cart_button_in_product_which_selected_should_change_to_remove() {
+    @Then("Add to Cart button in {string} product should change to Remove")
+    public void add_to_cart_button_in_product_should_change_to_remove(String item) {
         // Write code here that turns the phrase above into concrete actions
-        Assert.assertTrue(objDashboardPage.isRemoveButtonDisplayed());
+        Assert.assertTrue(objDashboardPage.isRemoveButtonDisplayed(item));
     }
 
     @When("User clicks the Remove button in {string} item on the dashboard")
-    public void user_clicks_the_remove_button_in_item_on_the_dashboard(String string) throws InterruptedException {
+    public void user_clicks_the_remove_button_in_item_on_the_dashboard(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-        objDashboardPage.clickRemoveItemButton();
+        objDashboardPage.clickRemoveItemButton(item);
         Thread.sleep(2000);
     }
     @Then("The cart icon not showing any number of items")
@@ -51,10 +51,10 @@ public class DashboardPageSteps {
         // Write code here that turns the phrase above into concrete actions
         Assert.assertTrue(objDashboardPage.numberItemInCartButton() == 0);
     }
-    @Then("Remove button in product which selected should change to Add to Cart")
-    public void remove_button_in_product_which_selected_should_change_to_add_to_cart() {
+    @Then("Remove button in {string} product should change to Add to Cart")
+    public void remove_button_in_product_should_change_to_add_to_cart(String item) {
         // Write code here that turns the phrase above into concrete actions
-        Assert.assertTrue(objDashboardPage.isAddCartButtonDisplayed());
+        Assert.assertTrue(objDashboardPage.isAddCartButtonDisplayed(item));
     }
 
 }

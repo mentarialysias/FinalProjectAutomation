@@ -25,7 +25,7 @@ public class CartPageSteps {
 
     @Given("User has add item to cart")
     public void user_has_add_item_to_cart() {
-        objDashboardPage.addItemToCart();
+        objDashboardPage.addItemToCart("Sauce Labs Backpack");
     }
 
 //    @Then("User should be able to see a error message {string}")

@@ -9,6 +9,7 @@ import webAutomation.utils.HelperClass;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class DashboardPageActions {
@@ -34,7 +35,6 @@ public class DashboardPageActions {
 
     public void logoutButtonClick() {
         dashboardPageLocators.logoutButton.click();
-
     }
 
 
@@ -49,8 +49,20 @@ public class DashboardPageActions {
         return isCartButtonEnable;
     }
 
-    public void addItemToCart() {
-        dashboardPageLocators.addItemButton.click();
+    public void addItemToCart(String itemName) {
+        if (itemName.equals("Sauce Labs Backpack")) {
+            dashboardPageLocators.addToCartBackpackButton.click();
+        } else if (itemName.equals("Sauce Labs Bike Light")) {
+            dashboardPageLocators.addToCartBikeLightButton.click();
+        } else if (itemName.equals("Sauce Labs Bolt T-Shirt")) {
+            dashboardPageLocators.addToCartBoltTshirtButton.click();
+        } else if (itemName.equals("Sauce Labs Fleece Jacket")) {
+            dashboardPageLocators.addToCartFleeceJacketButton.click();
+        } else if (itemName.equals("Sauce Labs Onesie")) {
+            dashboardPageLocators.addToCartOnesieButton.click();
+        } else if (itemName.equals("Test.allTheThings() T-Shirt (Red)")) {
+            dashboardPageLocators.addToCartRedTshirtButton.click();
+        }
     }
 
     public void clickOnCartButton() {
@@ -105,19 +117,63 @@ public class DashboardPageActions {
     }
 
 
-    public boolean isRemoveButtonDisplayed() {
-        WebElement removeButton = dashboardPageLocators.removeItemButton;
-        boolean isRemoveButtonEnable = removeButton.isEnabled();
-        return isRemoveButtonEnable;
+    public boolean isRemoveButtonDisplayed(String itemName) {
+        if (itemName.equals("Sauce Labs Backpack")) {
+            return dashboardPageLocators.removeBackpackButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Bike Light")) {
+            return dashboardPageLocators.removeBikeLightButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Bolt T-Shirt")) {
+            return dashboardPageLocators.removeBoltTshirtButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Fleece Jacket")) {
+            return dashboardPageLocators.removeFleeceJacketButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Onesie")) {
+            return dashboardPageLocators.removeOnesieButton.isDisplayed();
+        } else if (itemName.equals("Test.allTheThings() T-Shirt (Red)")) {
+            return dashboardPageLocators.removeRedTshirtButton.isDisplayed();
+        } else {
+            return false;
+        }
     }
 
-    public void clickRemoveItemButton() {
-        dashboardPageLocators.removeItemButton.click();
+    public void clickRemoveItemButton(String itemName) {
+        if (itemName.equals("Sauce Labs Backpack")) {
+            dashboardPageLocators.removeBackpackButton.click();
+        } else if (itemName.equals("Sauce Labs Bike Light")) {
+            dashboardPageLocators.removeBikeLightButton.click();
+        } else if (itemName.equals("Sauce Labs Bolt T-Shirt")) {
+            dashboardPageLocators.removeBoltTshirtButton.click();
+        } else if (itemName.equals("Sauce Labs Fleece Jacket")) {
+            dashboardPageLocators.removeFleeceJacketButton.click();
+        } else if (itemName.equals("Sauce Labs Onesie")) {
+            dashboardPageLocators.removeOnesieButton.click();
+        } else if (itemName.equals("Test.allTheThings() T-Shirt (Red)")) {
+            dashboardPageLocators.removeRedTshirtButton.click();
+        }
     }
 
-    public boolean isAddCartButtonDisplayed() {
-        WebElement addToCartButton = dashboardPageLocators.addItemButton;
-        boolean isAddtoCartButtonEnable = addToCartButton.isEnabled();
-        return isAddtoCartButtonEnable;
+    public boolean isAddCartButtonDisplayed(String itemName) {
+        if (itemName.equals("Sauce Labs Backpack")) {
+            return dashboardPageLocators.addToCartBackpackButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Bike Light")) {
+            return dashboardPageLocators.addToCartBikeLightButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Bolt T-Shirt")) {
+            return dashboardPageLocators.addToCartBoltTshirtButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Fleece Jacket")) {
+            return dashboardPageLocators.addToCartFleeceJacketButton.isDisplayed();
+        } else if (itemName.equals("Sauce Labs Onesie")) {
+            return dashboardPageLocators.addToCartOnesieButton.isDisplayed();
+        } else if (itemName.equals("Test.allTheThings() T-Shirt (Red)")) {
+            return dashboardPageLocators.addToCartRedTshirtButton.isDisplayed();
+        } else {
+            return false;
+        }
+    }
+
+    public void resetAppStateButtonClick() {
+        dashboardPageLocators.resetAppStateButton.click();
+    }
+
+    public void aboutButtonClick() {
+        dashboardPageLocators.aboutButton.click();
     }
 }

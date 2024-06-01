@@ -52,7 +52,7 @@ public class CheckoutSteps {
         loginSteps.userIsOnSwagLabLoginPage();
         loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
         loginSteps.userNavigateToDashboardPage();
-        objHomePage.addItemToCart();
+        objHomePage.addItemToCart("Sauce Labs Backpack");
     }
 
     @When("User fills in checkout info field with valid data")

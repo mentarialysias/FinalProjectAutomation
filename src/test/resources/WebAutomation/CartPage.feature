@@ -1,7 +1,7 @@
 Feature: Verification Cart Feature in Swag Labs
   Background:
     Given User has login to swag labs and navigate to dashboard page
-    And User has add item to cart
+    And
 
   Scenario: Verification Cart Page when there is one item in the cart
     When User click on cart button
