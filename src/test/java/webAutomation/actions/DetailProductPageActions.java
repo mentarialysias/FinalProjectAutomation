@@ -1,10 +1,9 @@
-package actions;
+package webAutomation.actions;
 
-import locators.DashboardPageLocators;
-import locators.DetailProductPageLocators;
+import webAutomation.locators.DetailProductPageLocators;
 import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
-import utils.HelperClass;
+import webAutomation.utils.HelperClass;
 
 
 public class DetailProductPageActions {
@@ -19,7 +18,7 @@ public class DetailProductPageActions {
 
 
     public boolean cekURLDetailProduct(){
-        String currentURL = utils.HelperClass.getDriver().getCurrentUrl();
+        String currentURL = webAutomation.utils.HelperClass.getDriver().getCurrentUrl();
         String expectedURL = "https://www.saucedemo.com/inventory-item";
         return currentURL.contains(expectedURL);
     }
@@ -94,7 +93,7 @@ public class DetailProductPageActions {
     }
 
     public void cekURLDashboard(){
-        String currentURL = utils.HelperClass.getDriver().getCurrentUrl();
+        String currentURL = webAutomation.utils.HelperClass.getDriver().getCurrentUrl();
         String expectedURL = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(expectedURL, currentURL);
     }

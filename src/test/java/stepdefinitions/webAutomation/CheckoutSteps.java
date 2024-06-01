@@ -1,6 +1,6 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
-import actions.*;
+import webAutomation.actions.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

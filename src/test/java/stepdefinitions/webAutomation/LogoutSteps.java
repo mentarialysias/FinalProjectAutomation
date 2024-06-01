@@ -1,12 +1,12 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
-import actions.DashboardPageActions;
-import actions.LoginPageActions;
+import webAutomation.actions.DashboardPageActions;
+import webAutomation.actions.LoginPageActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import utils.HelperClass;
+import webAutomation.utils.HelperClass;
 
 public class LogoutSteps {
 

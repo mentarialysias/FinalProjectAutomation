@@ -1,10 +1,7 @@
-package locators;
+package webAutomation.locators;
 
-import io.opentelemetry.api.baggage.propagation.W3CBaggagePropagator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.net.IDN;
 
 public class CheckoutOvwPageLocators {
 

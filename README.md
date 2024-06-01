@@ -68,10 +68,10 @@ Berikut struktur folder project setelah program dijalankan hingga step npm test:
 │   ├── ...
 │   └── test
 |       ├── java
-|       |    ├── actions
+|       |    ├── webAutomation.actions.actions
 |       │    │    ├── HomePageActions.java
 |       │    │    └── LoginPageActions.java
-|       │    ├── locators
+|       │    ├── webAutomation.actions.locators
 |       │    │    ├── HomePageLocators.java
 |       │    │    └── LoginPageLocators.java
 |       │    ├── runner
@@ -80,7 +80,7 @@ Berikut struktur folder project setelah program dijalankan hingga step npm test:
 |       │    │    ├── Hooks.java
 |       │    │    ├── LoginSteps.java
 |       │    │    └── LogoutSteps.java
-|       │    └── utils
+|       │    └── webAutomation.utils
 |       │         └── HelperClass.java
 |       └── resource
 |           ├── LoginPage.feature 

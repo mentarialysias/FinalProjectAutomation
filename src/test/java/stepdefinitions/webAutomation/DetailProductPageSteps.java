@@ -1,13 +1,9 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
-import actions.DetailProductPageActions;
+import webAutomation.actions.DetailProductPageActions;
 import io.cucumber.java.en.*;
-import org.bouncycastle.jcajce.provider.asymmetric.edec.IESCipher;
-import org.junit.Assert;
 
-import actions.LoginPageActions;
-import utils.HelperClass;
-import actions.DashboardPageActions;
+import webAutomation.actions.DashboardPageActions;
 
 public class DetailProductPageSteps {
 

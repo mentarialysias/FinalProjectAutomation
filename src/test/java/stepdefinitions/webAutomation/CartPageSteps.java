@@ -1,8 +1,8 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
-import actions.CartPageActions;
-import actions.DashboardPageActions;
-import actions.LoginPageActions;
+import webAutomation.actions.CartPageActions;
+import webAutomation.actions.DashboardPageActions;
+import webAutomation.actions.LoginPageActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

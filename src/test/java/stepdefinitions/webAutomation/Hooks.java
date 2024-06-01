@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
 
 import org.junit.BeforeClass;
@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import utils.HelperClass;
+import webAutomation.utils.HelperClass;
 
 /* Create the hook class that contains the Before and After hook to initialize the web browser and close the web browser. 
  * I have added the code to take the screenshot of the failed scenario in @After Hook.

@@ -1,10 +1,10 @@
-package actions;
+package webAutomation.actions;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import locators.LoginPageLocators;
-import utils.HelperClass;
+import webAutomation.locators.LoginPageLocators;
+import webAutomation.utils.HelperClass;
 
 
 public class LoginPageActions {

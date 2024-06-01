@@ -1,10 +1,10 @@
-package actions;
+package webAutomation.actions;
 
 
-import locators.DashboardPageLocators;
+import webAutomation.locators.DashboardPageLocators;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import utils.HelperClass;
+import webAutomation.utils.HelperClass;
 
 public class DashboardPageActions {
     DashboardPageLocators dashboardPageLocators = null;

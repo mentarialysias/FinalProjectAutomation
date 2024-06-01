@@ -1,9 +1,8 @@
-package actions;
+package webAutomation.actions;
 
-import locators.CheckoutCompletePageLocators;
-import locators.CheckoutOvwPageLocators;
+import webAutomation.locators.CheckoutCompletePageLocators;
 import org.openqa.selenium.support.PageFactory;
-import utils.HelperClass;
+import webAutomation.utils.HelperClass;
 
 public class CheckoutCompletePageActions {
     CheckoutCompletePageLocators checkoutCompletePageLocators = null;

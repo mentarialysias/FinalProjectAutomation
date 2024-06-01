@@ -1,11 +1,11 @@
-package stepdefinitions;
+package stepdefinitions.webAutomation;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
-import actions.LoginPageActions;
-import utils.HelperClass;
-import actions.DashboardPageActions;
+import webAutomation.actions.LoginPageActions;
+import webAutomation.utils.HelperClass;
+import webAutomation.actions.DashboardPageActions;
 
 public class LoginSteps {
 	
