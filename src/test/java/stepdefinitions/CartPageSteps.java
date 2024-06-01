@@ -18,9 +18,9 @@ public class CartPageSteps {
 
     @Then("User has login to swag labs and navigate to dashboard page")
     public void user_has_login_to_swag_labs_and_navigated_to_dashboard_page() {
-        loginSteps.user_is_on_swag_lab_login_page();
-        loginSteps.user_enters_username_as_and_password_as("standard_user","secret_sauce");
-        loginSteps.user_should_be_able_to_login_successfully_and_navigated_to_dashboard_page();
+        loginSteps.userIsOnSwagLabLoginPage();
+        loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
+        loginSteps.userNavigateToDashboardPage();
     }
 
     @Given("User has add item to cart")
@@ -72,7 +72,7 @@ public class CartPageSteps {
 
     @Then("User has navigated to dashboard page")
     public void user_has_navigated_to_dashboard_page() {
-        loginSteps.user_should_be_able_to_login_successfully_and_navigated_to_dashboard_page();
+        loginSteps.userNavigateToDashboardPage();
     }
 
 

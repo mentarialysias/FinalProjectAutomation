@@ -33,4 +33,7 @@ public class DashboardPageLocators {
 
     @FindBy(className = "inventory_item_desc")
     public WebElement itemDesc;
+
+    @FindBy(xpath = "//div[text()='Sauce Labs Backpack']")
+    public WebElement detailBackpack;
 }

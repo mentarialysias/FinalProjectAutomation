@@ -50,18 +50,16 @@ public class CheckoutOvwPageActions {
     }
 
     public boolean isPriceCalculationCorrect() {
-        boolean cekSubTotal;
-        boolean cekTax;
-        boolean cekItemTotal;
+        boolean cekSubTotal = false;
+        boolean cekTax = false;
+        boolean cekItemTotal = false;
 
-        cekSubTotal = Assert.assertEquals(cartPageActions.getItemPrice(), checkoutOvwPageLocators.subTotal);
-        cekTax = Assert.assertEquals(checkoutOvwPageLocators.tax.getText(), "$2.40");
-        cekItemTotal = Assert.assertEquals(dashboardPageLocators.itemPrice.getText() + checkoutOvwPageLocators.tax.getText(), checkoutOvwPageLocators.itemTotal);
+        Assert.assertEquals(cartPageActions.getItemPrice(), checkoutOvwPageLocators.subTotal);
+        Assert.assertEquals(checkoutOvwPageLocators.tax.getText(), "$2.40");
+        Assert.assertEquals(dashboardPageLocators.itemPrice.getText() + checkoutOvwPageLocators.tax.getText(), checkoutOvwPageLocators.itemTotal);
 
         return cekSubTotal && cekTax && cekItemTotal;
     }
 
-    public boolean getTitleOrderCompleted(){
-        Assert.assertEquals(check);
-    }
+
 }

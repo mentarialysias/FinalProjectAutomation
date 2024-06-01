@@ -49,9 +49,9 @@ public class CheckoutSteps {
 
     @Given("User has added item to cart")
     public void user_has_added_item_to_cart() {
-        loginSteps.user_is_on_swag_lab_login_page();
-        loginSteps.user_enters_username_as_and_password_as("standard_user","secret_sauce");
-        loginSteps.user_should_be_able_to_login_successfully_and_navigated_to_dashboard_page();
+        loginSteps.userIsOnSwagLabLoginPage();
+        loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
+        loginSteps.userNavigateToDashboardPage();
         objHomePage.addItemToCart();
     }
 
