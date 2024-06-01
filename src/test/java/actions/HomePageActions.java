@@ -19,16 +19,17 @@ public class HomePageActions {
         return(homePageLocators.headerPageTitle.getText());
     }
 
-    public WebElement getDashboard() {
-        return(homePageLocators.Dashboard);
+    public boolean isDashboardDisplayed() {
+        return homePageLocators.Dashboard.isDisplayed();
     }
 
-    public WebElement getSideBarButton() {
-        return(homePageLocators.sideBarButton);
+    public void hamburgerButtonClick() {
+        homePageLocators.sideBarButton.click();
     }
 
-    public WebElement getLogoutButton() {
-        return(homePageLocators.logoutButton);
+    public void logoutButtonClick() {
+        homePageLocators.logoutButton.click();
+
     }
 
 

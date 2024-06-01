@@ -37,9 +37,7 @@ public class CartPageActions {
     }
 
     public boolean isCSButtonEnable() {
-        WebElement csButton = cartPageLocators.csButton;
-        boolean isCSButtonEnable = csButton.isEnabled();
-        return isCSButtonEnable;
+        return cartPageLocators.csButton.isEnabled();
     }
 
     public boolean getCartPage() {

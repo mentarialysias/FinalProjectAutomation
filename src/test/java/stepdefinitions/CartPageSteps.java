@@ -11,13 +11,9 @@ import org.junit.Assert;
 public class CartPageSteps {
 
     LoginPageActions objLogin = new LoginPageActions();
-
     HomePageActions objHomePage = new HomePageActions();
-
     CartPageActions objCartPage = new CartPageActions();
-
     LoginSteps loginSteps = new LoginSteps();
-
     CheckoutSteps checkoutSteps = new CheckoutSteps();
 
     @Then("User has login to swag labs and navigate to dashboard page")
