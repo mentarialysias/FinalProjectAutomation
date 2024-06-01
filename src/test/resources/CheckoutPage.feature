@@ -19,6 +19,7 @@ Feature: Verification Checkout Feature in Swag Labs
     And There is cancel and finish button
 
   Scenario: Verification checkout complete page when there is item in cart
+    And User click on checkout button
     And User fills in checkout info field with valid data
     When User click on continue button
     And User click on finish button

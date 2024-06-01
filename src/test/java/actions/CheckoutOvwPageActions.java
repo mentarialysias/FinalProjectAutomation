@@ -15,6 +15,10 @@ public class CheckoutOvwPageActions {
     public CheckoutOvwPageActions() {
         this.checkoutOvwPageLocators = new CheckoutOvwPageLocators();
         PageFactory.initElements(HelperClass.getDriver(), checkoutOvwPageLocators);
+        this.dashboardPageLocators = new DashboardPageLocators();
+        PageFactory.initElements(HelperClass.getDriver(), dashboardPageLocators);
+        this.cartPageActions = new CartPageActions();
+        PageFactory.initElements(HelperClass.getDriver(), cartPageActions);
     }
 
     public String getItemName() {
@@ -50,16 +54,32 @@ public class CheckoutOvwPageActions {
     }
 
     public boolean isPriceCalculationCorrect() {
-        boolean cekSubTotal = false;
-        boolean cekTax = false;
-        boolean cekItemTotal = false;
+        // Menghapus semua karakter non-numerik kecuali titik desimal
+        String itemPriceText = cartPageActions.getItemPrice().replaceAll("[^\\d.]", "");
+        double itemPrice = Double.parseDouble(itemPriceText);
 
-        Assert.assertEquals(cartPageActions.getItemPrice(), checkoutOvwPageLocators.subTotal);
-        Assert.assertEquals(checkoutOvwPageLocators.tax.getText(), "$2.40");
-        Assert.assertEquals(dashboardPageLocators.itemPrice.getText() + checkoutOvwPageLocators.tax.getText(), checkoutOvwPageLocators.itemTotal);
+        String subTotalText = checkoutOvwPageLocators.subTotal.getText().replaceAll("[^\\d.]", "");
+        double subTotal = Double.parseDouble(subTotalText);
 
-        return cekSubTotal && cekTax && cekItemTotal;
+        String taxText = checkoutOvwPageLocators.tax.getText().replaceAll("[^\\d.]", "");
+        double tax = Double.parseDouble(taxText);
+
+        String itemTotalText = checkoutOvwPageLocators.itemTotal.getText().replaceAll("[^\\d.]", "");
+        double itemTotal = Double.parseDouble(itemTotalText);
+
+        // Memeriksa apakah subtotal, pajak, dan total item benar
+        boolean isSubTotalCorrect = itemPrice == subTotal;
+        boolean isTaxCorrect = tax == 2.40; // Pastikan nilai pajak yang diharapkan benar
+        boolean isItemTotalCorrect = itemTotal == (itemPrice + tax);
+
+        return isSubTotalCorrect && isTaxCorrect && isItemTotalCorrect;
     }
 
+    public boolean getCheckoutOvwPage() {
+        return checkoutOvwPageLocators.checkoutOvwPage.isDisplayed();
+    }
 
+    public void clickOnFinishButton() {
+        checkoutOvwPageLocators.finishButton.click();
+    }
 }
