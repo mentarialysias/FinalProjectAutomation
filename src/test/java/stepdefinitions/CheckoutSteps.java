@@ -8,7 +8,7 @@ import org.junit.Assert;
 
 public class CheckoutSteps {
 
-    HomePageActions objHomePage = new HomePageActions();
+    DashboardPageActions objHomePage = new DashboardPageActions();
     CartPageActions objCartPage = new CartPageActions();
     CheckoutInfoPageActions ObjCheckoutInfoPage = new CheckoutInfoPageActions();
     CheckoutOvwPageActions objCheckoutOvwPage = new CheckoutOvwPageActions();

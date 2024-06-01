@@ -1,8 +1,7 @@
 package actions;
 
 import locators.CartPageLocators;
-import locators.HomePageLocators;
-import org.junit.Assert;
+import locators.DashboardPageLocators;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utils.HelperClass;
@@ -10,21 +9,21 @@ import utils.HelperClass;
 public class CartPageActions {
 
     CartPageLocators cartPageLocators = null;
-    HomePageLocators homePageLocators = null;
+    DashboardPageLocators dashboardPageLocators = null;
 
     public CartPageActions() {
         this.cartPageLocators = new CartPageLocators();
         PageFactory.initElements(HelperClass.getDriver(), cartPageLocators);
-        this.homePageLocators = new HomePageLocators();
-        PageFactory.initElements(HelperClass.getDriver(), homePageLocators);
+        this.dashboardPageLocators = new DashboardPageLocators();
+        PageFactory.initElements(HelperClass.getDriver(), dashboardPageLocators);
     }
 
     public String getItemName() {
-        return(homePageLocators.itemName.getText());
+        return(dashboardPageLocators.itemName.getText());
     }
 
     public String getItemPrice() {
-        return(homePageLocators.itemPrice.getText());
+        return(dashboardPageLocators.itemPrice.getText());
     }
 
     public boolean isCheckoutButtonEnable() {
@@ -45,7 +44,7 @@ public class CartPageActions {
     }
 
     public String getItemDesc() {
-        return (homePageLocators.itemDesc.getText());
+        return (dashboardPageLocators.itemDesc.getText());
     }
 
     public void clickOnCheckoutButton() {

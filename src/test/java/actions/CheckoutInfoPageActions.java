@@ -1,9 +1,6 @@
 package actions;
 
-import locators.CartPageLocators;
 import locators.CheckoutInfoPageLocators;
-import locators.HomePageLocators;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utils.HelperClass;
 

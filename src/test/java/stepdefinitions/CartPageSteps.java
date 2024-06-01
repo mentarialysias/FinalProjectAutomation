@@ -1,7 +1,7 @@
 package stepdefinitions;
 
 import actions.CartPageActions;
-import actions.HomePageActions;
+import actions.DashboardPageActions;
 import actions.LoginPageActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,7 +11,7 @@ import org.junit.Assert;
 public class CartPageSteps {
 
     LoginPageActions objLogin = new LoginPageActions();
-    HomePageActions objHomePage = new HomePageActions();
+    DashboardPageActions objHomePage = new DashboardPageActions();
     CartPageActions objCartPage = new CartPageActions();
     LoginSteps loginSteps = new LoginSteps();
     CheckoutSteps checkoutSteps = new CheckoutSteps();

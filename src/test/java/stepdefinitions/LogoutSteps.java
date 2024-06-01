@@ -1,6 +1,6 @@
 package stepdefinitions;
 
-import actions.HomePageActions;
+import actions.DashboardPageActions;
 import actions.LoginPageActions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,7 +11,7 @@ import utils.HelperClass;
 public class LogoutSteps {
 
 	LoginPageActions objLogin = new LoginPageActions();
-	HomePageActions objHomePage = new HomePageActions();
+	DashboardPageActions objHomePage = new DashboardPageActions();
 
 	String loginPageUrl = "https://www.saucedemo.com/";
 

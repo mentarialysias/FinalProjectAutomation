@@ -3,7 +3,7 @@ package locators;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePageLocators {
+public class DashboardPageLocators {
     @FindBy(xpath = "//*[@id=\"header_container\"]/div[1]/div[2]/div")
     public WebElement headerPageTitle;
 

@@ -1,7 +1,7 @@
 package actions;
 
 import locators.CheckoutOvwPageLocators;
-import locators.HomePageLocators;
+import locators.DashboardPageLocators;
 import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 import utils.HelperClass;
@@ -9,7 +9,7 @@ import utils.HelperClass;
 public class CheckoutOvwPageActions {
 
     CheckoutOvwPageLocators checkoutOvwPageLocators = null;
-    HomePageLocators homePageLocators = null;
+    DashboardPageLocators dashboardPageLocators = null;
     CartPageActions cartPageActions = null;
 
     public CheckoutOvwPageActions() {
@@ -18,7 +18,7 @@ public class CheckoutOvwPageActions {
     }
 
     public String getItemName() {
-        return homePageLocators.itemName.getText();
+        return dashboardPageLocators.itemName.getText();
     }
 
     public String getItemQuantity() {
@@ -56,7 +56,7 @@ public class CheckoutOvwPageActions {
 
         cekSubTotal = Assert.assertEquals(cartPageActions.getItemPrice(), checkoutOvwPageLocators.subTotal);
         cekTax = Assert.assertEquals(checkoutOvwPageLocators.tax.getText(), "$2.40");
-        cekItemTotal = Assert.assertEquals(homePageLocators.itemPrice.getText() + checkoutOvwPageLocators.tax.getText(), checkoutOvwPageLocators.itemTotal);
+        cekItemTotal = Assert.assertEquals(dashboardPageLocators.itemPrice.getText() + checkoutOvwPageLocators.tax.getText(), checkoutOvwPageLocators.itemTotal);
 
         return cekSubTotal && cekTax && cekItemTotal;
     }

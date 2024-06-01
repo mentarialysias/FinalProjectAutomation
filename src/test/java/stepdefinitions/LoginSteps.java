@@ -5,12 +5,12 @@ import org.junit.Assert;
 
 import actions.LoginPageActions;
 import utils.HelperClass;
-import actions.HomePageActions;
+import actions.DashboardPageActions;
 
 public class LoginSteps {
 	
 	LoginPageActions objLogin = new LoginPageActions();
-	HomePageActions objHomePage = new HomePageActions();
+	DashboardPageActions objHomePage = new DashboardPageActions();
 
 	String url = "https://www.saucedemo.com/";
 
