@@ -11,26 +11,29 @@ import webAutomation.utils.HelperClass;
 public class LogoutSteps {
 
 	LoginPageActions objLogin = new LoginPageActions();
-	DashboardPageActions objHomePage = new DashboardPageActions();
+	DashboardPageActions objDashboardPage = new DashboardPageActions();
 
 	String loginPageUrl = "https://www.saucedemo.com/";
 
 
 	@Given("User login successfully and navigated to dashboard page")
-	public void user_login_successfully_and_navigated_to_dashboard_page() {
-		// valid login and navigated to dashboard page
-		Assert.assertTrue(objHomePage.isDashboardDisplayed());
+	public void user_login_successfully_and_navigated_to_dashboard_page() throws InterruptedException{
+		//navigate to url website
+		HelperClass.openPage(loginPageUrl);
+		// login to application
+		objLogin.loginStep("standard_user", "secret_sauce");
+		Thread.sleep(2000);
 	}
 	@When("User clicks on side bar menu")
 	public void user_clicks_on_side_bar_menu() throws InterruptedException {
 		// Click side bar menu
-		objHomePage.hamburgerButtonClick();
+		objDashboardPage.hamburgerButtonClick();
 		Thread.sleep(2000);
 	}
 	@When("User clicks on logout button")
 	public void user_clicks_on_logout_button() throws InterruptedException {
 		// Click logout button
-		objHomePage.logoutButtonClick();
+		objDashboardPage.logoutButtonClick();
 		Thread.sleep(2000);
 	}
 	@Then("User should be able to logout from the web application and display the login page")

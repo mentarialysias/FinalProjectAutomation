@@ -6,9 +6,9 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = "@TC09",
+@CucumberOptions(tags = "",
                  features = "src/test/resources/",
-                 glue = {"stepdefinitions/LogoutSteps"},
+                 glue = {"stepdefinitions"},
                  monochrome = true,
                  plugin = {"html:target/HtmlReports/report.html",
                  		"json:target/JSonReports/report.json",
