@@ -3,6 +3,8 @@ package locators;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.net.IDN;
+
 public class CheckoutInfoPageLocators {
 
     @FindBy(id = "checkout_info_container")
@@ -22,4 +24,8 @@ public class CheckoutInfoPageLocators {
 
     @FindBy(xpath = "//*[@id=\"postal-code\"]")
     public WebElement zipCode;
+
+    @FindBy(id = "continue")
+    public WebElement continueButton;
+
 }

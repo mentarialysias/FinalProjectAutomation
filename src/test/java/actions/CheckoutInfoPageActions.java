@@ -26,4 +26,14 @@ public class CheckoutInfoPageActions {
     public boolean getCheckoutInfoField() {
         return checkoutInfoPageLocators.checkoutInfoField.isDisplayed();
     }
+
+    public void fillsInCheckoutInfoField(String firstName, String lastName, String zipCode){
+        checkoutInfoPageLocators.firstName.sendKeys(firstName);
+        checkoutInfoPageLocators.lastName.sendKeys(lastName);
+        checkoutInfoPageLocators.zipCode.sendKeys(zipCode);
+    }
+
+    public void clickOnContinueButton() {
+        checkoutInfoPageLocators.continueButton.click();
+    }
 }
