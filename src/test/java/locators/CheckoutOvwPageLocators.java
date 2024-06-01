@@ -8,6 +8,9 @@ import java.net.IDN;
 
 public class CheckoutOvwPageLocators {
 
+    @FindBy(id = "checkout_summary_container")
+    public WebElement checkoutOvwPage;
+
     @FindBy(id = "cert_item")
     public WebElement cardItem;
 

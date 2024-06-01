@@ -67,7 +67,7 @@ public class CheckoutSteps {
 
     @Then("User has navigated to checkout overview page")
     public void user_has_navigated_to_checkout_overview_page() throws InterruptedException {
-        Assert.assertTrue(objCheckoutInfoPage.getCheckoutInfoPage());
+        Assert.assertTrue(objCheckoutOvwPage.getCheckoutOvwPage());
         Thread.sleep(2000);
     }
     @Then("There are card data item with their quantity")
@@ -100,5 +100,10 @@ public class CheckoutSteps {
     @Then ("There is back home button")
     public boolean there_is_back_home_button(){
         return objcheckoutCompletePage.isBackHomeButtonEnabled();
+    }
+
+    @When ("User click on finish button")
+    public void user_click_on_finish_button(){
+        objCheckoutOvwPage.clickOnFinishButton();
     }
 }
