@@ -1,6 +1,7 @@
 package stepdefinitions.webAutomation;
 
 import webAutomation.actions.CartPageActions;
+import webAutomation.actions.CheckoutInfoPageActions;
 import webAutomation.actions.DashboardPageActions;
 import webAutomation.actions.LoginPageActions;
 import io.cucumber.java.en.Given;
@@ -15,6 +16,7 @@ public class CartPageSteps {
     CartPageActions objCartPage = new CartPageActions();
     LoginSteps loginSteps = new LoginSteps();
     CheckoutSteps checkoutSteps = new CheckoutSteps();
+    CheckoutInfoPageActions objcheckoutInfoPageActions = new CheckoutInfoPageActions();
 
     @Then("User has login to swag labs and navigate to dashboard page")
     public void wasNavigatedToDashboardPage() {
@@ -70,9 +72,20 @@ public class CartPageSteps {
         loginSteps.userNavigateToDashboardPage();
     }
 
+    @When("User click on checkout button")
+    public void clickCheckout() {
+        objCartPage.clickOnCheckoutButton();
+    }
+
     @When("User click on continue shopping button")
-    public void clickCSButton() {
+    public void clickContinueShopping() {
         objCartPage.clickOnCSButton();
+    }
+
+    @Then("User has navigated to checkout information page")
+    public void navigateToCheckoutInformation() throws InterruptedException {
+        Assert.assertTrue(objcheckoutInfoPageActions.getCheckoutInfoPage());
+        Thread.sleep(2000);
     }
 
 

@@ -79,7 +79,7 @@ public class EndToEndTestingSteps {
 
     @When("User click continue shopping button")
     public void clickContinueShoppingButton() {
-        cartPageSteps.clickCSButton();
+        cartPageSteps.clickContinueShopping();
     }
 
     @When("user navigate to dashboard page and adding four other product")

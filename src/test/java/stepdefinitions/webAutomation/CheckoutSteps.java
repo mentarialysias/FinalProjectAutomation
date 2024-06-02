@@ -23,21 +23,6 @@ public class CheckoutSteps {
         Thread.sleep(2000);
     }
 
-    @When("User click on checkout button")
-    public void clickCheckout() {
-        objCartPage.clickOnCheckoutButton();
-    }
-
-    @When("User click on continue shopping button")
-    public void clickContinueShopping() {
-        objCartPage.clickOnCSButton();
-    }
-
-    @Then("User has navigated to checkout information page")
-    public void navigateToCheckoutInformation() throws InterruptedException {
-        Assert.assertTrue(objCheckoutInfoPage.getCheckoutInfoPage());
-        Thread.sleep(2000);
-    }
     @Then("There is checkout information title")
     public void checkingCheckoutInformationTitle() {
         Assert.assertEquals(objCheckoutInfoPage.getTitlePage(),"Checkout: Your Information");
