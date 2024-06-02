@@ -22,47 +22,55 @@ public class DetailProductPageSteps {
     }
 
     @When("User has on detail product page")
-    public void navigatedToDetailProductPage() {
+    public void navigatedToDetailProductPage() throws InterruptedException {
         objDetailProductPage.cekURLDetailProduct();
+        Thread.sleep(2000);
     }
 
     @Then("There is back to product button")
-    public void backButtonChecked() {
+    public void backButtonChecked() throws InterruptedException {
         objDetailProductPage.isBackButtonDisplayed();
+        Thread.sleep(1000);
 
     }
 
     @Then("there is the name, image, description and price of the Sauce Labs Backpack product")
-    public void detailProductChecked() {
+    public void detailProductChecked() throws InterruptedException {
        objDetailProductPage.isProductNameDisplayed();
        objDetailProductPage.isProductImageDisplayed();
        objDetailProductPage.isProductDescriptionDisplayed();
        objDetailProductPage.isProductPriceDisplayed();
+        Thread.sleep(2000);
     }
 
     @Then("There is Add to cart button")
-    public void AddCartButtonChecked() {
+    public void AddCartButtonChecked() throws InterruptedException {
         objDetailProductPage.isAddCartButtonDisplayed();
+        Thread.sleep(1000);
     }
 
     @When("User click Add to cart button")
-    public void clickAddCartButton() {
+    public void clickAddCartButton() throws InterruptedException {
         objDetailProductPage.clickAddToCart();
+        Thread.sleep(1000);
     }
 
     @Then("Add to cart button change to Remove button")
-    public void checkingButton() {
+    public void checkingButton() throws InterruptedException {
        objDetailProductPage.removeButtonDisplayed();
+        Thread.sleep(1000);
     }
 
     @When("User click Back to product button")
-    public void clickBackButton() {
+    public void clickBackButton() throws InterruptedException {
         objDetailProductPage.clickBackButton();
+        Thread.sleep(1000);
     }
 
     @Then("User navigate to dashboard page")
-    public void navigateToDashboard() {
+    public void navigateToDashboard() throws InterruptedException {
         objDetailProductPage.cekURLDashboard();
+        Thread.sleep(1000);
     }
 
 

@@ -29,37 +29,43 @@ public class LoginSteps {
 	}
 
 	@Then("There are fields for inputting username and password")
-	public void checkingUsernameAndPasswordField() {
+	public void checkingUsernameAndPasswordField() throws InterruptedException {
 		Assert.assertTrue(objLogin.isPasswordFieldDisplayed());
 		Assert.assertTrue(objLogin.isUsernameFieldDisplayed());
+		Thread.sleep(1000);
 	}
 
 	@Then("There is a Login Button")
-	public void checkingLoginButton() {
+	public void checkingLoginButton() throws InterruptedException {
 		Assert.assertTrue(objLogin.isButtonEnable());
+		Thread.sleep(1000);
 	}
 
 	@Then("There is a Swag Labs logo name")
-	public void checkingLogo() {
+	public void checkingLogo() throws InterruptedException {
 		Assert.assertTrue(objLogin.isLogoDisplayed());
+		Thread.sleep(1000);
 	}
 
 	@When("User enters username as {string} and password as {string}")
-	public void enterUsernameAndPassword(String username, String password) {
+	public void enterUsernameAndPassword(String username, String password) throws InterruptedException {
 		// login to application
 		objLogin.loginStep(username, password);
+		Thread.sleep(1000);
 	}
 
 	@Then("User should be able to login successfully and navigated to dashboard page")
-	public void userNavigateToDashboardPage() {
+	public void userNavigateToDashboardPage() throws InterruptedException {
 		// valid login and navigated to dashboard page
 		Assert.assertTrue(objHomePage.isDashboardDisplayed());
+		Thread.sleep(1000);
 	}
 
 	@Then("User should be able to see a error message {string}")
-	public void errorMessageDisplayed(String errorMessage) {
+	public void errorMessageDisplayed(String errorMessage) throws InterruptedException {
 		System.out.println(objLogin.getErrorMessage());
 		Assert.assertEquals(errorMessage, objLogin.getErrorMessage());
+		Thread.sleep(1000);
 	}
 
 

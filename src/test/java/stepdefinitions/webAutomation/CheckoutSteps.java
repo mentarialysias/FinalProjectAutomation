@@ -24,30 +24,35 @@ public class CheckoutSteps {
     }
 
     @Then("There is checkout information title")
-    public void checkingCheckoutInformationTitle() {
+    public void checkingCheckoutInformationTitle() throws InterruptedException {
         Assert.assertEquals(objCheckoutInfoPage.getTitlePage(),"Checkout: Your Information");
+        Thread.sleep(2000);
     }
     @Then("There is checkout info field")
-    public void checkingCheckoutInformationfield() {
+    public void checkingCheckoutInformationfield() throws InterruptedException {
         Assert.assertTrue(objCheckoutInfoPage.getCheckoutInfoField());
+        Thread.sleep(2000);
     }
 
     @Given("User has added item to cart")
-    public void addedItemToCart() {
+    public void addedItemToCart() throws InterruptedException {
         loginSteps.userIsOnSwagLabLoginPage();
         loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
         loginSteps.userNavigateToDashboardPage();
         objHomePage.addItemToCart("Sauce Labs Backpack");
+        Thread.sleep(2000);
     }
 
     @When("User fills in checkout info field with valid data")
-    public void fillsCheckoutInformation() {
+    public void fillsCheckoutInformation() throws InterruptedException {
         objCheckoutInfoPage.fillsInCheckoutInfoField("yasmin", "azizah", "40291" );
+        Thread.sleep(2000);
     }
 
     @When("User click on continue button")
-    public void clickContinueButton() {
+    public void clickContinueButton() throws InterruptedException {
         objCheckoutInfoPage.clickOnContinueButton();
+        Thread.sleep(2000);
     }
 
     @Then("User has navigated to checkout overview page")
@@ -56,20 +61,23 @@ public class CheckoutSteps {
         Thread.sleep(2000);
     }
     @Then("There are card data item with their quantity")
-    public void checkingCheckoutData() {
+    public void checkingCheckoutData() throws InterruptedException {
         Assert.assertEquals(objCheckoutOvwPage.getItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(objCheckoutOvwPage.getItemQuantity(), "1");
+        Thread.sleep(1000);
     }
     @Then("There are information payment, shipping and price")
-    public void chekcingInformationOfCost() {
+    public void chekcingInformationOfCost() throws InterruptedException {
         objCheckoutOvwPage.isPaymentInformationCorrect();
         objCheckoutOvwPage.isShippingInformationCorrect();
         objCheckoutOvwPage.isPriceCalculationCorrect();
+        Thread.sleep(2000);
     }
     @Then("There is cancel and finish button")
-    public void checkingButtonOfCOOverviewPage() {
+    public void checkingButtonOfCOOverviewPage() throws InterruptedException {
         objCheckoutOvwPage.isCancelButtonEnable();
         objCheckoutOvwPage.isFinishButtonEnable();
+        Thread.sleep(2000);
     }
 
     @Then ("User has navigated to checkout complete page")
@@ -78,7 +86,7 @@ public class CheckoutSteps {
     }
 
     @Then ("There is title order completed")
-    public boolean checkingTheTitleOfCOCompletePage(){
+    public boolean checkingTheTitleOfCOCompletePage() throws InterruptedException {
         return objcheckoutCompletePage.isTitleOrderCompletedDisplayed();
     }
 

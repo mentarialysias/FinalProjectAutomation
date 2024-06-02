@@ -16,19 +16,19 @@ public class EndToEndTestingSteps {
     }
 
     @When("User verification the login page")
-    public void verificationLoginPage() {
+    public void verificationLoginPage() throws InterruptedException {
         loginSteps.checkingUsernameAndPasswordField();
         loginSteps.checkingLoginButton();
         loginSteps.checkingLogo();
     }
 
     @When("User enter valid username and password")
-    public void enterUsernameAndPassword() {
+    public void enterUsernameAndPassword() throws InterruptedException {
         loginSteps.enterUsernameAndPassword("standard_user", "secret_sauce");
     }
 
     @Then("User navigating to dashboard page")
-    public void navigatedToDashboardPage() {
+    public void navigatedToDashboardPage() throws InterruptedException {
         loginSteps.userNavigateToDashboardPage();
     }
 
@@ -46,7 +46,7 @@ public class EndToEndTestingSteps {
     }
 
     @Then("There is {int} number of the cart icon")
-    public void checkingCartIconsNumber(Integer int1) {
+    public void checkingCartIconsNumber(Integer int1) throws InterruptedException {
         dashboardPageSteps.checkCartNumberIcon(int1);
     }
 
@@ -58,7 +58,7 @@ public class EndToEndTestingSteps {
     }
 
     @When("User click cart icon")
-    public void clickCartIcon() {
+    public void clickCartIcon() throws InterruptedException {
         cartPageSteps.clickCartButton();
     }
 
@@ -78,7 +78,7 @@ public class EndToEndTestingSteps {
     }
 
     @When("User click continue shopping button")
-    public void clickContinueShoppingButton() {
+    public void clickContinueShoppingButton() throws InterruptedException {
         cartPageSteps.clickCSButton();
     }
 
@@ -89,7 +89,7 @@ public class EndToEndTestingSteps {
     }
 
     @Then("The number of Icon cart change to {int}")
-    public void checkTheCartIconNumbersAfterAddOtherItems(Integer int1) {
+    public void checkTheCartIconNumbersAfterAddOtherItems(Integer int1) throws InterruptedException {
         dashboardPageSteps.checkCartNumberIcon(int1);
     }
 
@@ -102,7 +102,7 @@ public class EndToEndTestingSteps {
     }
 
     @When("User click cart button and clicks on checkout button")
-    public void clickCOOnCartPage() {
+    public void clickCOOnCartPage() throws InterruptedException {
         clickCartIcon();
         cartPageSteps.clickCheckout();
     }
@@ -113,7 +113,7 @@ public class EndToEndTestingSteps {
     }
 
     @Then("There is a field to enter checkout information")
-    public void checkCOInformationField() {
+    public void checkCOInformationField() throws InterruptedException {
        checkoutSteps.checkingCheckoutInformationTitle();
        checkoutSteps.checkingCheckoutInformationfield();
     }
@@ -127,7 +127,7 @@ public class EndToEndTestingSteps {
     }
 
     @When("User fill the checkout information and click continue button")
-    public void fillInformationAndClickContinue() {
+    public void fillInformationAndClickContinue() throws InterruptedException {
        checkoutSteps.fillsCheckoutInformation();
        checkoutSteps.clickContinueButton();
     }
@@ -139,7 +139,7 @@ public class EndToEndTestingSteps {
     }
 
     @Then("User is navigated to checkout complete")
-    public void navigateToCOComplete() {
+    public void navigateToCOComplete() throws InterruptedException {
         checkoutSteps.navigateToCOCompletePage();
         checkoutSteps.checkingTheTitleOfCOCompletePage();
         checkoutSteps.checkingBackHomeButtonOfCOCompletePage();

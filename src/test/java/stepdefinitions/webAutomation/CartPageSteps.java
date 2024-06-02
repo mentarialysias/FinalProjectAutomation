@@ -19,20 +19,23 @@ public class CartPageSteps {
     CheckoutInfoPageActions objcheckoutInfoPageActions = new CheckoutInfoPageActions();
 
     @Then("User has login to swag labs and navigate to dashboard page")
-    public void wasNavigatedToDashboardPage() {
+    public void wasNavigatedToDashboardPage() throws InterruptedException {
         loginSteps.userIsOnSwagLabLoginPage();
         loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
         loginSteps.userNavigateToDashboardPage();
+        Thread.sleep(2000);
     }
 
     @Given("User has add item to cart")
-    public void userHasAddingProductToCart() {
+    public void userHasAddingProductToCart() throws InterruptedException {
         objDashboardPage.addItemToCart("Sauce Labs Backpack");
+        Thread.sleep(2000);
     }
 
     @When("User click on cart button")
-    public void clickCartButton() {
+    public void clickCartButton() throws InterruptedException {
         objDashboardPage.clickOnCartButton();
+        Thread.sleep(2000);
     }
 
     @Then("User has navigated to cart page")
@@ -41,30 +44,35 @@ public class CartPageSteps {
         Thread.sleep(2000);
     }
     @Then("There is added item")
-    public void checkingfirstAddItem() {
+    public void checkingfirstAddItem() throws InterruptedException {
         Assert.assertEquals(objCartPage.getItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(objCartPage.getItemPrice(), "$29.99");
         Assert.assertEquals(objCartPage.getItemDesc(), "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.");
+        Thread.sleep(2000);
     }
     @Then("There is a continue shopping button")
-    public void checkingContinueButton() {
+    public void checkingContinueButton() throws InterruptedException {
         Assert.assertTrue(objCartPage.isCSButtonEnable());
+        Thread.sleep(2000);
     }
 
     @Then("There is checkout button")
-    public void checkingCheckoutButton() {
+    public void checkingCheckoutButton() throws InterruptedException {
         Assert.assertTrue(objCartPage.isCheckoutButtonEnable());
+        Thread.sleep(2000);
     }
 
     @Then("User has navigated to cart page that there is one item")
     public void navigateToCartPage() throws InterruptedException {;
         navigateToCart();
         checkingfirstAddItem();
+        Thread.sleep(2000);
     }
     @Then("There is a continue shopping button and checkout button")
-    public void checkingButtonAtCartPage() {
-       checkingCheckoutButton();
-       checkingContinueButton();
+    public void checkingButtonAtCartPage() throws InterruptedException {
+        checkingCheckoutButton();
+        checkingContinueButton();
+        Thread.sleep(2000);
     }
 
     @Then("User has navigated to dashboard page")
@@ -73,13 +81,15 @@ public class CartPageSteps {
     }
 
     @When("User click on checkout button")
-    public void clickCheckout() {
+    public void clickCheckout() throws InterruptedException {
         objCartPage.clickOnCheckoutButton();
+        Thread.sleep(2000);
     }
 
     @When("User click on continue shopping button")
-    public void clickCSButton() {
+    public void clickCSButton() throws InterruptedException {
         objCartPage.clickOnCSButton();
+        Thread.sleep(2000);
     }
 
     @Then("User has navigated to checkout information page")
