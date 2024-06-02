@@ -68,7 +68,7 @@ public class CartPageSteps {
         checkingfirstAddItem();
         Thread.sleep(2000);
     }
-    @Then("There is a continue shopping button and checkout button")
+    @Then("There are continue shopping button and checkout button")
     public void checkingButtonAtCartPage() throws InterruptedException {
         checkingCheckoutButton();
         checkingContinueButton();
