@@ -15,18 +15,12 @@ Feature: Dashboard Feature in Swag Labs App
 
    @AddFourItemsToCart
     Scenario: Menguji menambah 4 barang ke dalam cart
-        When User clicks the Add to cart button in "Sauce Labs Bike Light" item on the dashboard
-        And User clicks the Add to cart button in "Sauce Labs Bolt T-Shirt" item on the dashboard
-        And User clicks the Add to cart button in "Sauce Labs Fleece Jacket" item on the dashboard
-        And User clicks the Add to cart button in "Sauce Labs Onesie" item on the dashboard
+        When User clicks the Add to cart button for four item on the dashboard
         Then the cart icon showing 4 number of items
-        And Add to Cart button in "Sauce Labs Bike Light" product should change to Remove
-        And Add to Cart button in "Sauce Labs Bolt T-Shirt" product should change to Remove
-        And Add to Cart button in "Sauce Labs Fleece Jacket" product should change to Remove
-        And Add to Cart button in "Sauce Labs Onesie" product should change to Remove
+        And Add to Cart button in four product has been added should change to Remove
 
     @RemoveOneItemFromCart
-    Scenario: Menguji menghapus 1 barang dari cart
+    Scenario: Menguji menghapus 1 barang dari cart yang berisi 1 barang
         When User clicks the Add to cart button in "Sauce Labs Backpack" item on the dashboard
         And User clicks the Remove button in "Sauce Labs Backpack" item on the dashboard
         Then The cart icon not showing any number of items

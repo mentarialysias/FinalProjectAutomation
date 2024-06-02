@@ -17,38 +17,38 @@ public class CheckoutSteps {
     CheckoutCompletePageActions objcheckoutCompletePage = new CheckoutCompletePageActions();
 
     @Given("User has clicked on cart button and navigated to cart page")
-    public void user_has_clicked_on_cart_button_and_navigated_to_cart_page() throws InterruptedException {
+    public void navigatedToCartPage() throws InterruptedException {
         objHomePage.clickOnCartButton();
         Assert.assertTrue(objCartPage.getCartPage());
         Thread.sleep(2000);
     }
 
     @When("User click on checkout button")
-    public void user_click_on_checkout_button() {
+    public void clickCheckout() {
         objCartPage.clickOnCheckoutButton();
     }
 
     @When("User click on continue shopping button")
-    public void user_click_on_continue_shopping_button() {
+    public void clickContinueShopping() {
         objCartPage.clickOnCSButton();
     }
 
     @Then("User has navigated to checkout information page")
-    public void user_has_navigated_to_checkout_information_page() throws InterruptedException {
+    public void navigateToCheckoutInformation() throws InterruptedException {
         Assert.assertTrue(objCheckoutInfoPage.getCheckoutInfoPage());
         Thread.sleep(2000);
     }
     @Then("There is checkout information title")
-    public void there_is_checkout_information_title() {
+    public void checkingCheckoutInformationTitle() {
         Assert.assertEquals(objCheckoutInfoPage.getTitlePage(),"Checkout: Your Information");
     }
     @Then("There is checkout info field")
-    public void there_is_checkout_info_field() {
+    public void checkingCheckoutInformationfield() {
         Assert.assertTrue(objCheckoutInfoPage.getCheckoutInfoField());
     }
 
     @Given("User has added item to cart")
-    public void user_has_added_item_to_cart() {
+    public void addedItemToCart() {
         loginSteps.userIsOnSwagLabLoginPage();
         loginSteps.enterUsernameAndPassword("standard_user","secret_sauce");
         loginSteps.userNavigateToDashboardPage();
@@ -56,54 +56,54 @@ public class CheckoutSteps {
     }
 
     @When("User fills in checkout info field with valid data")
-    public void user_fills_in_checkout_info_field_with_valid_data() {
+    public void fillsCheckoutInformation() {
         objCheckoutInfoPage.fillsInCheckoutInfoField("yasmin", "azizah", "40291" );
     }
 
     @When("User click on continue button")
-    public void user_click_on_continue_button() {
+    public void clickContinueButton() {
         objCheckoutInfoPage.clickOnContinueButton();
     }
 
     @Then("User has navigated to checkout overview page")
-    public void user_has_navigated_to_checkout_overview_page() throws InterruptedException {
+    public void navigateToCOOverview() throws InterruptedException {
         Assert.assertTrue(objCheckoutOvwPage.getCheckoutOvwPage());
         Thread.sleep(2000);
     }
     @Then("There are card data item with their quantity")
-    public void there_are_card_data_item_with_their_quantity() {
+    public void checkingCheckoutData() {
         Assert.assertEquals(objCheckoutOvwPage.getItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(objCheckoutOvwPage.getItemQuantity(), "1");
     }
     @Then("There are information payment, shipping and price")
-    public void there_are_information_payment_shipping_and_price() {
+    public void chekcingInformationOfCost() {
         objCheckoutOvwPage.isPaymentInformationCorrect();
         objCheckoutOvwPage.isShippingInformationCorrect();
         objCheckoutOvwPage.isPriceCalculationCorrect();
     }
     @Then("There is cancel and finish button")
-    public void there_is_cancel_and_finish_button() {
+    public void checkingButtonOfCOOverviewPage() {
         objCheckoutOvwPage.isCancelButtonEnable();
         objCheckoutOvwPage.isFinishButtonEnable();
     }
 
     @Then ("User has navigated to checkout complete page")
-    public void user_has_navigated_to_checkout_complete_page(){
+    public void navigateToCOCompletePage(){
 
     }
 
     @Then ("There is title order completed")
-    public boolean there_is_title_order_completed(){
+    public boolean checkingTheTitleOfCOCompletePage(){
         return objcheckoutCompletePage.isTitleOrderCompletedDisplayed();
     }
 
     @Then ("There is back home button")
-    public boolean there_is_back_home_button(){
+    public boolean checkingBackHomeButtonOfCOCompletePage(){
         return objcheckoutCompletePage.isBackHomeButtonEnabled();
     }
 
     @When ("User click on finish button")
-    public void user_click_on_finish_button(){
+    public void clickFinishButton(){
         objCheckoutOvwPage.clickOnFinishButton();
     }
 }
