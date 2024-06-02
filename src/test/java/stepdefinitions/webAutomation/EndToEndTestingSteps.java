@@ -11,87 +11,86 @@ public class EndToEndTestingSteps {
     CheckoutSteps checkoutSteps = new CheckoutSteps();
     MenuPageSteps menuPageSteps = new MenuPageSteps();
     @When("User open the swag labs browser")
-    public void openTheSwagLabs() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void openTheSwagLabs() throws InterruptedException {
+       loginSteps.userHasOpenedSwagLab();
     }
 
     @When("User verification the login page")
     public void verificationLoginPage() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        loginSteps.checkingUsernameAndPasswordField();
+        loginSteps.checkingLoginButton();
+        loginSteps.checkingLogo();
     }
 
     @When("User enter valid username and password")
     public void enterUsernameAndPassword() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        loginSteps.enterUsernameAndPassword("standard_user", "secret_sauce");
     }
 
     @Then("User navigating to dashboard page")
     public void navigatedToDashboardPage() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       loginSteps.userNavigateToDashboardPage();
     }
 
     @Given("User has on dashboard page")
-    public void hasOnDashboardPaga() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void hasOnDashboardPaga() throws InterruptedException {
+       openTheSwagLabs();
+       verificationLoginPage();
+       enterUsernameAndPassword();
+       navigatedToDashboardPage();
     }
 
     @When("User clicks the Add to Cart button for the {string}")
-    public void AddProductToCart(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void addProductToCart(String string) throws InterruptedException {
+        dashboardPageSteps.addingTheProductToCart(string);
     }
 
     @Then("There is {int} number of the cart icon")
     public void checkingCartIconsNumber(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        dashboardPageSteps.checkCartNumberIcon(int1);
     }
 
     @Given("User has add one item to cart and cart icon showing {int}")
-    public void hasAddedOneItemToCart(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void hasAddedOneItemToCart(Integer int1) throws InterruptedException {
+        hasOnDashboardPaga();
+        addProductToCart("Sauce Labs Backpack");
+        checkingCartIconsNumber(int1);
     }
 
     @When("User click cart icon")
     public void clickCartIcon() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        cartPageSteps.clickCartButton();
     }
 
     @Then("user is navigated to the cart page which contains one product that has been added")
-    public void navigateToCartPageWhichContainOneItem() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void navigateToCartPageWhichContainOneItem() throws InterruptedException {
+        cartPageSteps.navigateToCart();
+        cartPageSteps.checkingContinueButton();
+        cartPageSteps.checkingCheckoutButton();
+        cartPageSteps.checkingfirstAddItem();
     }
 
     @Given("User has been navigated to the cart page, which contains one product")
-    public void hasNavigateToCartPageWhichContainOneItem() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void hasNavigateToCartPageWhichContainOneItem() throws InterruptedException {
+        hasAddedOneItemToCart(1);
+        clickCartIcon();
+        navigateToCartPageWhichContainOneItem();
     }
 
     @When("User click continue shopping button")
     public void clickContinueShoppingButton() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        cartPageSteps.clickCSButton();
     }
 
     @When("user navigate to dashboard page and adding four other product")
-    public void navigateToDashboardAndAddingOtherItem() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void navigateToDashboardAndAddingOtherItem() throws InterruptedException {
+        cartPageSteps.navigateToDashboard();
+        dashboardPageSteps.addFourProduct();
     }
 
     @Then("The number of Icon cart change to {int}")
     public void checkTheCartIconNumbersAfterAddOtherItems(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        dashboardPageSteps.checkCartNumberIcon(int1);
     }
 
     @Given("User has add four other product and the cart number was {int}")

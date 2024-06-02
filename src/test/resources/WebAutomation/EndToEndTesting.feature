@@ -23,6 +23,7 @@ Feature: End to End Testing
     When User click cart icon
     Then  user is navigated to the cart page which contains one product that has been added
 
+    ##
   @AddMoreThan1Product
   Scenario: Click on continue shopping button when the cart has item
     Given User has been navigated to the cart page, which contains one product

@@ -66,7 +66,7 @@ public class CartPageSteps {
     }
 
     @Then("User has navigated to dashboard page")
-    public void user_has_navigated_to_dashboard_page() {
+    public void navigateToDashboard() {
         loginSteps.userNavigateToDashboardPage();
     }
 

@@ -41,7 +41,7 @@ public class DashboardPageSteps {
     }
 
     @When("User clicks the Add to cart button for four item on the dashboard")
-    public void AddFourProduct() throws InterruptedException {
+    public void addFourProduct() throws InterruptedException {
         String firstProduct = "Sauce Labs Bike Light";
         String secondProduct = "Sauce Labs Bolt T-Shirt";
         String thirdProduct = "Sauce Labs Fleece Jacket";
