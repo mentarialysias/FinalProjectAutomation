@@ -16,7 +16,7 @@ Feature: Menu Feature from Swag Labs Application
     And User clicks on side bar menu
     And User clicks on reset app state button
     Then The cart icon not showing any number of items
-    And Remove button in product which selected should change to Add to Cart
+    And Remove button in "Sauce Labs Backpack" product should change to Add to Cart
 
 
     @AboutPage

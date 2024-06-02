@@ -64,12 +64,4 @@ public class MenuPageSteps {
 		Thread.sleep(2000);
 	}
 
-
-
-
-
-
-
-
-
 }
