@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Menu Feature from Swag Labs Application
   Background:
    Given User login successfully and navigated to dashboard page

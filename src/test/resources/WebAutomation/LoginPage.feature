@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Login to Swag Labs
 
   Background:

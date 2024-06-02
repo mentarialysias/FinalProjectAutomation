@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Check Detail Product Page
 
   Background:

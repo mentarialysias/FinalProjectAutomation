@@ -6,15 +6,17 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(tags = "@ResetAppState",
+@CucumberOptions(tags = "",
                  features = "src/test/resources/",
                  glue = {"stepdefinitions"},
                  monochrome = true,
                  plugin = {"html:target/HtmlReports/report.html",
                  		"json:target/JSonReports/report.json",
                  		"junit:target/JUnitReports/report.xml",
-				 		"pretty",}
-                 )
+				 		"pretty",
+						 "json:target/cucumber-reports/cucumber.json"}
+				)
+
 public class CucumberRunnerTest {
 
 }

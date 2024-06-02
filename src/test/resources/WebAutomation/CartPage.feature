@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Verification Cart Feature in Swag Labs
   Background:
     Given User has login to swag labs and navigate to dashboard page

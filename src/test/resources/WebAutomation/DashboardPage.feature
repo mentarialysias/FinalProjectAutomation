@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Dashboard Feature in Swag Labs App
   Background:
     Given User login successfully and navigated to dashboard page

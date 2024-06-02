@@ -1,3 +1,4 @@
+@WebAutomation
 Feature: Verification Checkout Feature in Swag Labs
   Background:
     Given User has added item to cart
