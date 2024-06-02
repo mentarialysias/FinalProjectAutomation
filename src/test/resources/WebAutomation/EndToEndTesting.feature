@@ -23,7 +23,6 @@ Feature: End to End Testing
     When User click cart icon
     Then  user is navigated to the cart page which contains one product that has been added
 
-    ##
   @AddMoreThan1Product
   Scenario: Click on continue shopping button when the cart has item
     Given User has been navigated to the cart page, which contains one product
@@ -35,9 +34,9 @@ Feature: End to End Testing
   Scenario: Add other item to cart and Checkout product
     Given User has add four other product and the cart number was 5
     When User click cart icon
-    And User checking the cart list and clicks on checkout button
-    Then The user is navigated to the checkout page
-    And there is a field to enter checkout information
+    And User click cart button and clicks on checkout button
+    Then The user is navigated to the checkout information page
+    And There is a field to enter checkout information
 
   @FinishingOrder
   Scenario:  user fills in the checkout information and finish the checkout process
@@ -49,8 +48,7 @@ Feature: End to End Testing
   @LogoutFromSwagLabs
   Scenario: User logs out of the application after completing the checkout process
     Given User has been navigated to the checkout compelete page
-    When User click Back home button
-    And user logs out of the application
+    When user logs out of the application
     Then user has been navigate to SwagLab Login page
 
 

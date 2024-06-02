@@ -78,7 +78,7 @@ public class CartPageSteps {
     }
 
     @When("User click on continue shopping button")
-    public void clickContinueShopping() {
+    public void clickCSButton() {
         objCartPage.clickOnCSButton();
     }
 
