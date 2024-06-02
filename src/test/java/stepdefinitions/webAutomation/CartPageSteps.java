@@ -76,7 +76,7 @@ public class CartPageSteps {
     }
 
     @Then("User has navigated to dashboard page")
-    public void navigateToDashboard() {
+    public void navigateToDashboard() throws InterruptedException {
         loginSteps.userNavigateToDashboardPage();
     }
 
