@@ -12,7 +12,7 @@ public class DashboardPageSteps {
     public void clickFilterButton(String selectFilter) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         objDashboardPage.clickOnFilterButton(selectFilter);
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Then("User should see the list of products sorted by name from Z to A")
@@ -25,21 +25,21 @@ public class DashboardPageSteps {
     public void addingTheProductToCart(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         objDashboardPage.addItemToCart(item);
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Then("the cart icon showing {int} number of items")
     public void checkCartNumberIcon(int numberOfItem) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         Assert.assertEquals(objDashboardPage.numberItemInCartButton(), numberOfItem);
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @Then("Add to Cart button in {string} product should change to Remove")
     public void isAddButtonChangeToRemoveButton(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         Assert.assertTrue(objDashboardPage.isRemoveButtonDisplayed(item));
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @When("User clicks the Add to cart button for four item on the dashboard")
@@ -72,19 +72,19 @@ public class DashboardPageSteps {
     public void clickRemoveButton(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         objDashboardPage.clickRemoveItemButton(item);
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
     @Then("The cart icon not showing any number of items")
     public void isCartShowingNoAnyNumber() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         Assert.assertTrue(objDashboardPage.numberItemInCartButton() == 0);
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
     @Then("Remove button in {string} product should change to Add to Cart")
     public void isRemoveButtonChangeToAddButton(String item) throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         Assert.assertTrue(objDashboardPage.isAddCartButtonDisplayed(item));
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
 }

@@ -24,13 +24,13 @@ public class DetailProductPageSteps {
     @When("User has on detail product page")
     public void navigatedToDetailProductPage() throws InterruptedException {
         objDetailProductPage.cekURLDetailProduct();
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Then("There is back to product button")
     public void backButtonChecked() throws InterruptedException {
         objDetailProductPage.isBackButtonDisplayed();
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
     }
 
@@ -40,37 +40,37 @@ public class DetailProductPageSteps {
        objDetailProductPage.isProductImageDisplayed();
        objDetailProductPage.isProductDescriptionDisplayed();
        objDetailProductPage.isProductPriceDisplayed();
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Then("There is Add to cart button")
     public void AddCartButtonChecked() throws InterruptedException {
         objDetailProductPage.isAddCartButtonDisplayed();
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @When("User click Add to cart button")
     public void clickAddCartButton() throws InterruptedException {
         objDetailProductPage.clickAddToCart();
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @Then("Add to cart button change to Remove button")
     public void checkingButton() throws InterruptedException {
        objDetailProductPage.removeButtonDisplayed();
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @When("User click Back to product button")
     public void clickBackButton() throws InterruptedException {
         objDetailProductPage.clickBackButton();
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
     @Then("User navigate to dashboard page")
     public void navigateToDashboard() throws InterruptedException {
         objDetailProductPage.cekURLDashboard();
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
 
 

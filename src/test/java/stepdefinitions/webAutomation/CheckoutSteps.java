@@ -64,20 +64,20 @@ public class CheckoutSteps {
     public void checkingCheckoutData() throws InterruptedException {
         Assert.assertEquals(objCheckoutOvwPage.getItemName(), "Sauce Labs Backpack");
         Assert.assertEquals(objCheckoutOvwPage.getItemQuantity(), "1");
-        Thread.sleep(1000);
+        Thread.sleep(500);
     }
     @Then("There are information payment, shipping and price")
     public void chekcingInformationOfCost() throws InterruptedException {
         objCheckoutOvwPage.isPaymentInformationCorrect();
         objCheckoutOvwPage.isShippingInformationCorrect();
         objCheckoutOvwPage.isPriceCalculationCorrect();
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
     @Then("There is cancel and finish button")
     public void checkingButtonOfCOOverviewPage() throws InterruptedException {
         objCheckoutOvwPage.isCancelButtonEnable();
         objCheckoutOvwPage.isFinishButtonEnable();
-        Thread.sleep(2000);
+        Thread.sleep(500);
     }
 
     @Then ("User has navigated to checkout complete page")

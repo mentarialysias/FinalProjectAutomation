@@ -1,55 +1,26 @@
 @WebAutomation
 Feature: End to End Testing
 
-  Background:
+  @EndToEndTesting @LoginUntilLogoutAfterCheckoutTheItems
+  Scenario: User login checkout more than one product successfully
     Given User is on SwagLab Login page
-
-  @LoginToSwagLab
-  Scenario: Login with valid credentials
     When User open the swag labs browser
     And User verification the login page
     And User enter valid username and password
-    Then User navigating to dashboard page
-
-  @AddOneProduct
-  Scenario: User Add 1 product to cart and check it
-    Given User has on dashboard page
-    When User clicks the Add to Cart button for the "Sauce Labs Backpack"
-    Then There is 1 number of the cart icon
-
-
-  @CheckingCart
-  Scenario: Verification Cart Page when there is one item in the cart
-    Given User has add one item to cart and cart icon showing 1
-    When User click cart icon
-    Then  user is navigated to the cart page which contains one product that has been added
-
-  @AddMoreThan1Product
-  Scenario: Click on continue shopping button when the cart has item
-    Given User has been navigated to the cart page, which contains one product
-    When User click continue shopping button
+    And User navigating to dashboard page
+    And User clicks the Add to Cart button for the "Sauce Labs Backpack"
+    And There is 1 number of the cart icon
+    And User click cart icon
+    And user is navigated to the cart page which contains one product that has been added
+    And User click continue shopping button
     And user navigate to dashboard page and adding four other product
-    Then The number of Icon cart change to 5
-
-  @CheckingCartAndWantToCheckoutTheProduct
-  Scenario: Add other item to cart and Checkout product
-    Given User has add four other product and the cart number was 5
-    When User click cart icon
+    And The number of Icon cart change to 5
     And User click cart button and clicks on checkout button
-    Then The user is navigated to the checkout information page
-    And There is a field to enter checkout information
-
-  @FinishingOrder
-  Scenario:  user fills in the checkout information and finish the checkout process
-    Given User has on checkout page
-    When User fill the checkout information and click continue button
+    And The user is navigated to the checkout information page
+    And User fill the checkout information and click continue button
     And User navigate to checkout overview page and click finish button
-    Then User is navigated to checkout complete
-
-  @LogoutFromSwagLabs
-  Scenario: User logs out of the application after completing the checkout process
-    Given User has been navigated to the checkout compelete page
-    When user logs out of the application
+    And User is navigated to checkout complete
+    And user logs out of the application
     Then user has been navigate to SwagLab Login page
 
 

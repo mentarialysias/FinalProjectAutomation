@@ -25,20 +25,19 @@ public class LoginSteps {
 	public void userHasOpenedSwagLab() throws InterruptedException {
 		String currentUrl = HelperClass.getCurrentUrl();
 		Assert.assertEquals(url, currentUrl);
-		Thread.sleep(2000);
+		Thread.sleep(500);
 	}
 
 	@Then("There are fields for inputting username and password")
 	public void checkingUsernameAndPasswordField() throws InterruptedException {
 		Assert.assertTrue(objLogin.isPasswordFieldDisplayed());
 		Assert.assertTrue(objLogin.isUsernameFieldDisplayed());
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 
 	@Then("There is a Login Button")
-	public void checkingLoginButton() throws InterruptedException {
+	public void checkingLoginButton() {
 		Assert.assertTrue(objLogin.isButtonEnable());
-		Thread.sleep(1000);
 	}
 
 	@Then("There is a Swag Labs logo name")
@@ -58,14 +57,14 @@ public class LoginSteps {
 	public void userNavigateToDashboardPage() throws InterruptedException {
 		// valid login and navigated to dashboard page
 		Assert.assertTrue(objHomePage.isDashboardDisplayed());
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 
 	@Then("User should be able to see a error message {string}")
 	public void errorMessageDisplayed(String errorMessage) throws InterruptedException {
 		System.out.println(objLogin.getErrorMessage());
 		Assert.assertEquals(errorMessage, objLogin.getErrorMessage());
-		Thread.sleep(1000);
+		Thread.sleep(500);
 	}
 
 
