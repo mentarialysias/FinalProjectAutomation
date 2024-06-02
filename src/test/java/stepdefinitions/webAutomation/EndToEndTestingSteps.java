@@ -32,14 +32,6 @@ public class EndToEndTestingSteps {
         loginSteps.userNavigateToDashboardPage();
     }
 
-    @Given("User has on dashboard page")
-    public void hasOnDashboardPaga() throws InterruptedException {
-        openTheSwagLabs();
-        verificationLoginPage();
-        enterUsernameAndPassword();
-        navigatedToDashboardPage();
-    }
-
     @When("User clicks the Add to Cart button for the {string}")
     public void addProductToCart(String string) throws InterruptedException {
         dashboardPageSteps.addingTheProductToCart(string);
@@ -48,13 +40,6 @@ public class EndToEndTestingSteps {
     @Then("There is {int} number of the cart icon")
     public void checkingCartIconsNumber(Integer int1) throws InterruptedException {
         dashboardPageSteps.checkCartNumberIcon(int1);
-    }
-
-    @Given("User has add one item to cart and cart icon showing {int}")
-    public void hasAddedOneItemToCart(Integer int1) throws InterruptedException {
-        hasOnDashboardPaga();
-        addProductToCart("Sauce Labs Backpack");
-        checkingCartIconsNumber(int1);
     }
 
     @When("User click cart icon")
@@ -70,12 +55,6 @@ public class EndToEndTestingSteps {
         cartPageSteps.checkingfirstAddItem();
     }
 
-    @Given("User has been navigated to the cart page, which contains one product")
-    public void hasNavigateToCartPageWhichContainOneItem() throws InterruptedException {
-        hasAddedOneItemToCart(1);
-        clickCartIcon();
-        navigateToCartPageWhichContainOneItem();
-    }
 
     @When("User click continue shopping button")
     public void clickContinueShoppingButton() throws InterruptedException {
@@ -88,18 +67,9 @@ public class EndToEndTestingSteps {
         dashboardPageSteps.addFourProduct();
     }
 
-    @Then("The number of Icon cart change to {int}")
-    public void checkTheCartIconNumbersAfterAddOtherItems(Integer int1) throws InterruptedException {
-        dashboardPageSteps.checkCartNumberIcon(int1);
-    }
 
-    @Given("User has add four other product and the cart number was {int}")
-    public void hasAddingOtherItemAndCartNumberIs5(Integer int1) throws InterruptedException {
-        hasNavigateToCartPageWhichContainOneItem();
-        clickContinueShoppingButton();
-        navigateToDashboardAndAddingOtherItem();
-        checkTheCartIconNumbersAfterAddOtherItems(int1);
-    }
+
+
 
     @When("User click cart button and clicks on checkout button")
     public void clickCOOnCartPage() throws InterruptedException {
@@ -112,19 +82,8 @@ public class EndToEndTestingSteps {
         cartPageSteps.navigateToCheckoutInformation();
     }
 
-    @Then("There is a field to enter checkout information")
-    public void checkCOInformationField() throws InterruptedException {
-       checkoutSteps.checkingCheckoutInformationTitle();
-       checkoutSteps.checkingCheckoutInformationfield();
-    }
 
-    @Given("User has on checkout page")
-    public void hasNavigateToCOPage() throws InterruptedException {
-       hasAddingOtherItemAndCartNumberIs5(5);
-       clickCOOnCartPage();
-       navigateToCOInfPage();
-       checkCOInformationField();
-    }
+
 
     @When("User fill the checkout information and click continue button")
     public void fillInformationAndClickContinue() throws InterruptedException {
@@ -143,14 +102,6 @@ public class EndToEndTestingSteps {
         checkoutSteps.navigateToCOCompletePage();
         checkoutSteps.checkingTheTitleOfCOCompletePage();
         checkoutSteps.checkingBackHomeButtonOfCOCompletePage();
-    }
-
-    @Given("User has been navigated to the checkout compelete page")
-    public void hasNavigateToCOCompelete() throws InterruptedException {
-        hasNavigateToCOPage();
-        fillInformationAndClickContinue();
-        navigateToCOOverviewAndClickFinish();
-        navigateToCOComplete();
     }
 
     @When("user logs out of the application")

@@ -45,7 +45,7 @@ public class CheckoutSteps {
 
     @When("User fills in checkout info field with valid data")
     public void fillsCheckoutInformation() throws InterruptedException {
-        objCheckoutInfoPage.fillsInCheckoutInfoField("yasmin", "azizah", "40291" );
+        objCheckoutInfoPage.fillsInCheckoutInfoField("Kelompok 3", "3B D4 Teknik Informatika", "40291" );
         Thread.sleep(2000);
     }
 
