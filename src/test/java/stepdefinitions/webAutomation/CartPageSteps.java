@@ -70,6 +70,10 @@ public class CartPageSteps {
         loginSteps.userNavigateToDashboardPage();
     }
 
+    @When("User click on continue shopping button")
+    public void clickCSButton() {
+        objCartPage.clickOnCSButton();
+    }
 
 
 }

@@ -54,4 +54,5 @@ public class CartPageActions {
     public void clickOnCSButton() {
         cartPageLocators.csButton.click();
     }
+
 }
