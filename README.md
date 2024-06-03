@@ -1,4 +1,4 @@
-# Swag Labs Website Automation Testing By B3
+# Final Project Web Automation Testing dan API Testing By B3
 
 ## Daftar Isi
 - [Deskripsi](#deskripsi)
@@ -23,7 +23,7 @@ Proyek ini terdiri dari 5 bagian utama:
 
 1. Pastikan untuk mengklon repository ini ke dalam direktori lokal Anda dengan perintah:
     ```
-    git clone https://github.com/mentarialysias/webAutomationProject.git
+    git clone https://github.com/mentarialysias/FinalProjectAutomation.git
     ```
    Ini akan mendownload salinan proyek ke komputer Anda.
 
