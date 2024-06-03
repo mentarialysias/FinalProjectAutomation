@@ -49,7 +49,7 @@ public class DetailProductPageSteps {
         Thread.sleep(500);
     }
 
-    @When("User click Add to cart button")
+    @When("User click on Add to cart button")
     public void clickAddCartButton() throws InterruptedException {
         objDetailProductPage.clickAddToCart();
         Thread.sleep(500);
@@ -61,7 +61,7 @@ public class DetailProductPageSteps {
         Thread.sleep(500);
     }
 
-    @When("User click Back to product button")
+    @When("User click on Back to product button")
     public void clickBackButton() throws InterruptedException {
         objDetailProductPage.clickBackButton();
         Thread.sleep(500);
@@ -72,8 +72,4 @@ public class DetailProductPageSteps {
         objDetailProductPage.cekURLDashboard();
         Thread.sleep(500);
     }
-
-
-
-
 }

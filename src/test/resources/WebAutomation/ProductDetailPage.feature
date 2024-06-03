@@ -5,7 +5,7 @@ Feature: Check Detail Product Page
     Given User is on Detail Product Page of Sauce Labs Backpack
 
   @PageVerification @TC01
-  Scenario: Detail Product Page Varification
+  Scenario: Detail Product Page Verification
     When User has on detail product page
     Then There is back to product button
     And there is the name, image, description and price of the Sauce Labs Backpack product
@@ -15,12 +15,12 @@ Feature: Check Detail Product Page
   @AddToCartButton @TC
   Scenario: Check Add to cart button
     When User has on detail product page
-    And User click Add to cart button
+    And User click on Add to cart button
     Then Add to cart button change to Remove button
 
   @BackToProductButton @TC
   Scenario: Check Back to Product button
     When User has on detail product page
-    And User click Back to product button
+    And User click on Back to product button
     Then User navigate to dashboard page
 
