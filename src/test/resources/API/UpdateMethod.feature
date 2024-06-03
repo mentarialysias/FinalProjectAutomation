@@ -24,4 +24,4 @@ Feature: Update Method API Testing for DummyApi.io
   Scenario: Update user email with valid data
     Given the Update API endpoint is "/user/60d0fe4f5311236168a109ca"
     When I send a PUT request with valid email data
-    Then the update response status code should be 400
+    Then the update response status code should be 200

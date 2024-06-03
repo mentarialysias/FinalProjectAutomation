@@ -32,7 +32,7 @@ public class CreateApiSteps {
                 "\"firstName\": \"Mentari\"," +
                 "\"lastName\": \"Ayu\"," +
                 "\"gender\": \"female\"," +
-                "\"email\": \"mentari.ayhuualysiaa11@example.com\"," +
+                "\"email\": \"mentari.ayhhhhhhhhhhhuualysiaa11@example.com\"," +
                 "\"dateOfBirth\": \"2001-04-26\"," +
                 "\"phone\": \"098218240182\"," +
                 "\"picture\": \"https://example.com/picture.jpg\"," +

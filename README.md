@@ -19,6 +19,10 @@ Proyek ini terdiri dari 5 bagian utama:
 4. **Locator:** Berisi file-file yang terdapat code untuk menemukan elemen di halaman web agar bisa diinteraksikan oleh skrip pengujian.
 5. **Runner:** Berisi file untuk menjalankan web automation testing.
 
+Terdapat 2 testing yang dilakukan di proyek ini:
+1. **Web Automation Testing:** Pengujian otomatis dilakukan pada web Swag Labs (https://www.saucedemo.com/). Pengujian dilakukan untuk memastikan setiap fitur berjalan sesuai dengan spesifikasi requirement dan desainnya.
+2. **API Testing:** Pengujian otomatis dilakukan pada User Controller API Dummy (https://dummyapi.io/). Pengujian dilakukan untuk memastikan setiap method API untuk User Controller berjalan sesuai dengan API Contract.
+
 ## Prasyarat
 
 1. Pastikan untuk mengklon repository ini ke dalam direktori lokal Anda dengan perintah:
@@ -68,23 +72,62 @@ Berikut struktur folder project setelah program dijalankan hingga step npm test:
 │   ├── ...
 │   └── test
 |       ├── java
-|       |    ├── webAutomation.actions.actions
-|       │    │    ├── HomePageActions.java
-|       │    │    └── LoginPageActions.java
-|       │    ├── webAutomation.actions.locators
-|       │    │    ├── HomePageLocators.java
-|       │    │    └── LoginPageLocators.java
+|       |    ├── apiTesting.utils
+|       |    │    └── HelperClass.java
 |       │    ├── runner
 |       │    │    └── cucumberRunnerTest.java
 |       │    ├── stepdefinitions
-|       │    │    ├── Hooks.java
-|       │    │    ├── LoginSteps.java
-|       │    │    └── LogoutSteps.java
-|       │    └── webAutomation.utils
-|       │         └── HelperClass.java
+|       │    │    ├── apiTesting
+|       │    │    │    ├── CreateApiSteps.java
+|       │    │    │    ├── DeleteApiSteps.java
+|       │    │    │    ├── GetApiSteps.java
+|       │    │    │    ├── Hooks.java
+|       │    │    │    └── UpdateApiSteps.java
+|       │    │    └── webAutomation
+|       │    │         ├── CartPageSteps.java
+|       │    │         ├── CheckoutPageSteps.java
+|       │    │         ├── DashboardPageSteps.java
+|       │    │         ├── DetailProductPageSteps.java   
+|       │    │         ├── EndToEndTestingSteps.java
+|       │    │         ├── Hooks.java
+|       │    │         ├── LoginSteps.java
+|       │    │         ├── MenuPageSteps.java
+|       │    │         └── StepBySteps.java
+|       │    └── webAutomation
+|       │    │    ├── actions
+|       │    │    │    ├── CartPageActions.java
+|       │    │    │    ├── CheckoutCompletePageActions.java
+|       │    │    │    ├── CheckoutInfoPageActions.java
+|       │    │    │    ├── CheckoutOvwPageActions.java
+|       │    │    │    ├── DashboardPageActions.java
+|       │    │    │    ├── DetailProductPageActions.java
+|       │    │    │    └── LoginPageActions.java
+|       │    │    ├── locator
+|       │    │    │    ├── CartPageLocator.java
+|       │    │    │    ├── CheckoutCompletePageLocator.java
+|       │    │    │    ├── CheckoutInfoPageLocator.java
+|       │    │    │    ├── CheckoutOvwPageLocator.java
+|       │    │    │    ├── DashboardPageLocator.java
+|       │    │    │    ├── DetailProductPageLocator.java
+|       │    │    │    └── LoginPageLocator.java
+|       │    │    └── utils
+|       │    │         ├── HelperClass.java
 |       └── resource
-|           ├── LoginPage.feature 
-|           └── LogoutPage.feature
+|           ├── API
+|           │    ├── CreateMethod.feature
+|           │    ├── DeleteMethod.feature
+|           │    ├── GetMethod.feature
+|           │    └── UpdateMethod.feature
+|           └── WebAutomation
+|                ├── CartPage.feature
+|                ├── CheckoutPage.feature
+|                ├── DashboardPage.feature
+|                ├── EndToEndTesting.feature
+|                ├── LoginPage.feature
+|                ├── MenuPage.feature
+|                ├── ProductDetailPage.feature
+|                └── StepByStep.feature
+
 ├── pom.xml
 └── README.md
     
@@ -92,9 +135,9 @@ Berikut struktur folder project setelah program dijalankan hingga step npm test:
 
 ## Pengujian dan Generate Report
 Pengujian dilakukan menggunakan JUnit. Laporan hasil pengujian akan digenerate secara otomatis. Laporan ini terletak pada folder `target` setelah pengujian otomatis dijalankan. Hasil pengujiannya sebagai berikut:
-- Total test: <span style="color:#2196F3; font-weight:bold;">11</span>
-- Successful: <span style="color:#4CAF50; font-weight:bold;">3 (27%)</span>
-- Failures: <span style="color:#F44336; font-weight:bold;">8 (73%)</span>
+- Total test: <span style="color:#2196F3; font-weight:bold;">55</span>
+- Successful: <span style="color:#4CAF50; font-weight:bold;">43 (65%)</span>
+- Failures: <span style="color:#F44336; font-weight:bold;">12 (35%)</span>
 - Igroned: <span style="color:#FFC107; font-weight:bold;">0</span>
 
 <br> <img src="src/image/report.png">
@@ -128,3 +171,9 @@ Pengujian dilakukan menggunakan JUnit. Laporan hasil pengujian akan digenerate s
 
 5. ![EdgeDriver](https://img.shields.io/badge/EdgeDriver-WebDriver-%2374CB)
    <br>EdgeDriver adalah driver untuk mengotomatisasi pengujian di browser Microsoft Edge. Kunjungi [situs web Selenium](https://www.selenium.dev/documentation/en/) untuk informasi lebih lanjut.
+
+6. ![RestAssured](https://img.shields.io/badge/RestAssured-API_Testing_Library-%2300E676)
+    <br>RestAssured adalah library Java yang kuat untuk melakukan pengujian API secara otomatis. Dengan RestAssured, Anda dapat dengan mudah melakukan permintaan HTTP ke endpoint API, memeriksa respons, dan memvalidasi data JSON. Kunjungi dokumentasi RestAssured untuk informasi lebih lanjut.
+
+7. ![](https://img.shields.io/badge/TestNG-Framework_Pengujian-%23a5d6a7)
+    <br>Framework pengujian</span> yang digunakan untuk menulis dan menjalankan unit tes dalam proyek Java. Kunjungi [situs web TestNG](https://testng.org/) untuk informasi lebih lanjut.
